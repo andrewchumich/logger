@@ -1,6 +1,6 @@
 angular.module( 'ngBoilerplate.about', [
   'ui.router',
-  'placeholders',
+  //'placeholders',
   'ui.bootstrap'
 ])
 
