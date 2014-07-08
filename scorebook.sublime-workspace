@@ -1,0 +1,945 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"req",
+				"requiresAdmin"
+			],
+			[
+				"fiel",
+				"fieldStep"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"Templa",
+				"Template"
+			],
+			[
+				"Kitt",
+				"kittySchema"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"j",
+				"JsonService"
+			],
+			[
+				"Home",
+				"HomeService"
+			],
+			[
+				"my",
+				"myModule"
+			],
+			[
+				"rea",
+				"readStream"
+			],
+			[
+				"to",
+				"toString"
+			],
+			[
+				"err",
+				"err"
+			],
+			[
+				"get",
+				"getFullYear"
+			],
+			[
+				"pr",
+				"process"
+			],
+			[
+				"re",
+				"returnValues"
+			],
+			[
+				"p",
+				"plain"
+			],
+			[
+				"nu",
+				"numberOfMiles"
+			],
+			[
+				"m",
+				"numberOfMiles"
+			],
+			[
+				"rou",
+				"routeProvider"
+			],
+			[
+				"ho",
+				"HomeController"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"prin",
+				"print"
+			],
+			[
+				"n",
+				"neighbor"
+			],
+			[
+				"pss",
+				"possibleEdges"
+			],
+			[
+				"set",
+				"setInMST"
+			],
+			[
+				"add",
+				"addUndirectedNeighbor"
+			],
+			[
+				"in",
+				"inMST"
+			],
+			[
+				"edge",
+				"edgeTaken"
+			],
+			[
+				"ge",
+				"getDistance"
+			],
+			[
+				"root",
+				"rootNode"
+			],
+			[
+				"s",
+				"setVisited"
+			],
+			[
+				"roo",
+				"rootNode"
+			],
+			[
+				"is",
+				"isVisited"
+			],
+			[
+				"di",
+				"distanceFromRoot"
+			],
+			[
+				"num",
+				"numberOfNodes"
+			],
+			[
+				"Nu",
+				"numberOfEdges"
+			],
+			[
+				"cus",
+				"customers"
+			],
+			[
+				"u",
+				"unitPrice"
+			],
+			[
+				"cu",
+				"customerID"
+			],
+			[
+				"new",
+				"newOrder"
+			],
+			[
+				"pro",
+				"product"
+			],
+			[
+				"h",
+				"h1	Tag"
+			],
+			[
+				"x",
+				"xs"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 1063,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 15476,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 4904 files for \"dummy test\" (case sensitive)\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\app.spec.js:\n   11      }));\n   12  \n   13:     it( 'should pass a dummy test', inject( function() {\n   14        expect( AppCtrl ).toBeTruthy();\n   15      }));\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\home\\home.spec.js:\n    8    beforeEach( module( 'ngBoilerplate.home' ) );\n    9  \n   10:   it( 'should have a dummy test', inject( function() {\n   11      expect( true ).toBeTruthy();\n   12    }));\n\n2 matches across 2 files\n\n\nSearching 4904 files for \"isCurrentUrl\" (case sensitive)\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\app.spec.js:\n    1  describe( 'AppCtrl', function() {\n    2:   describe( 'isCurrentUrl', function() {\n    3      var AppCtrl, $location, $scope;\n    4  \n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 837,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "karma/karma-unit.tpl.js",
+			"settings":
+			{
+				"buffer_size": 1771,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Andrew/Documents/My Web Sites/restclient-progenex.json",
+			"settings":
+			{
+				"buffer_size": 1006,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 17882,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/app/about/about.js",
+			"settings":
+			{
+				"buffer_size": 592,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "build/index.html",
+			"settings":
+			{
+				"buffer_size": 5740,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pretty",
+				"HTMLPrettify"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 244.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Andrew/Documents/csvtext.csv",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/app.spec.js",
+		"/C/Users/Andrew/Documents/My Web Sites/AngularFun/server.js",
+		"/C/Users/Andrew/Documents/My Web Sites/AngularFun/HomePage.html",
+		"/C/Users/Andrew/Documents/My Web Sites/AngularFun/app.js",
+		"/C/Users/Andrew/Documents/My Web Sites/AngularFun/DirectiveTemplate.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/loggers/public/views/create.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/loggers/public/routes/loggers.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/loggers/public/views/view.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/loggers/public/services/loggers.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/loggers/public/views/edit.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/loggers/server/models/loggers.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/loggers/public/templates/templates.json",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/server/models/user.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/loggers/test/karma/controllers/loggers.spec.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/templates/templates.json",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/templates/templates.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/loggers/server/templates/templates.json",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/loggers/server/services/templates.js",
+		"/C/Users/Andrew/SkyDrive/programming/webstuff/angular/script.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/controllers/runs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/node_modules/mongoose/lib/schema.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/loggers/public/views/list.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/models/runs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/assets/css/articles.css",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/assets/css/runs.css",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/views/edit.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/views/list.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/views/view.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/README.md",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/package.json",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/package.json",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/app.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/test/mocha/logger/model.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/controllers/loggers.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/routes/loggers.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/services/loggers.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/server/controllers/loggers.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/server/routes/loggers.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/test/karma/controllers/loggers.spec.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/test/mocha/run/model.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/controllers/runs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/services/runs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/views/create.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/server/controllers/runs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/server/models/runs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/server/routes/runs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/test/karma/controllers/runs.spec.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/app.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/app.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/package.json",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/public/controllers/logs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/public/services/logs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/public/views/create.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/public/views/edit.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/public/views/list.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/public/views/view.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/server/controllers/logs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/server/models/logs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/server/routes/logs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/test/karma/controllers/logs.spec.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logs/test/mocha/log/model.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/controllers/logs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/routes/logs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/public/services/logs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/server/controllers/logs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/server/models/logs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/server/routes/logs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/test/karma/controllers/logs.spec.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/auth/views/register.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/auth/routes/auth.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/auth/controllers/auth.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/routes/runs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/logger/server/routes/logger.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/test/karma/karma.conf.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/server/controllers/users.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/server/routes/users.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/server/views/users/signup.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/views/list.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/controllers/runs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/views/create.html",
+		"/C/Users/Andrew/SkyDrive/programming/webstuff/angular/index.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/system/views/header.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/views/edit.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/views/view.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/system/services/global.js",
+		"/C/Users/Andrew/SkyDrive/Cross Country/conorshouse.pl",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/test/mocha/run/model.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/server/config/express.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/test/karma/controllers/runs.spec.js",
+		"/C/Users/Andrew/Documents/Americlap/META-INF/MANIFEST.MF",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/assets/css/articles.css",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/controllers/articles.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/services/articles.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/README.md",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/controllers/articles.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/test/karma/controllers/articles.spec.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/test/mocha/article/model.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/routes/articles.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/models/article.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/routes/articles.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/server/controllers/runs.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/articles/server/controllers/articles.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/server/models/run.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/articles/server/models/article.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/server/routes/timber.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/articles/public/controllers/articles.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/public/controllers/timber.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/public/views/index.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/app.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/public/routes/timber.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/server/config/env/development.js",
+		"/C/Users/Andrew/Documents/My Web Sites/test.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/t.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/system/views/index.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/init.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/system/services/menus.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/system/controllers/header.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/auth/views/login.html",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/mypackage/README.md",
+		"/C/Users/Andrew/Documents/My Web Sites/hello-world/package.json",
+		"/C/Users/Andrew/Documents/My Web Sites/hello-world/server.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/node_modules/gridfs-stream/test/index.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/Gruntfile.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/server/config/config.js",
+		"/C/Users/Andrew/Documents/My Web Sites/tests/getting-started.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/server.js",
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/package.json"
+	],
+	"find":
+	{
+		"height": 57.0
+	},
+	"find_in_files":
+	{
+		"height": 135.0,
+		"where_history":
+		[
+			"C:\\Users\\Andrew\\Documents\\Scorebook\\scorebook",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\public\\auth",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers\\server",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers\\public",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers\\server",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers\\public",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers\\server",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers\\public",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers",
+			"C:\\Users\\Andrew\\SkyDrive\\programming\\webstuff\\angular",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers\\server",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\loggers\\server",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\logger",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\logs",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\node_modules",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\logger",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\runs",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\server",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\runs\\public",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\runs",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\public",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\server",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\runs",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\public",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\server",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\runs\\server",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\runs\\public",
+			"C:\\Users\\Andrew\\Documents\\My Web Sites\\myApp\\packages\\runs",
+			"",
+			"<open files>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"placehol",
+			"karma",
+			"isCurrentUrl",
+			"karma",
+			"isCurrentUrl",
+			"dummy test",
+			"coffee",
+			"tes",
+			"logger",
+			"requiresLogin",
+			"logger",
+			"blank",
+			"\"",
+			"scope.logger",
+			"update",
+			"loggers/create",
+			"checkLoggedin",
+			"templates.json",
+			"logger by id",
+			"/loggers/:loggerId",
+			"update",
+			"user",
+			"findOne",
+			"fineOne",
+			"findOne",
+			"fineOne",
+			"populate",
+			"show",
+			"Logger",
+			"statics.load",
+			"LoggerSchema.statics.load",
+			"User",
+			"home.json",
+			"loggers",
+			"Distance",
+			"Logger",
+			"distance",
+			"notes",
+			"Notes",
+			"distance",
+			"notes",
+			"distance",
+			"save",
+			"$save",
+			".create",
+			"destroy",
+			"new Logger",
+			"loggers",
+			"Notes",
+			"notes",
+			"distance",
+			"notes",
+			"distance",
+			"Loggers",
+			"distance",
+			"id",
+			"run",
+			"Run",
+			"logger",
+			"Logger",
+			"article",
+			"run",
+			"Run",
+			"run",
+			"Run",
+			"run",
+			"Linnovate",
+			"/users",
+			"create",
+			"var run",
+			"run",
+			" \"",
+			"bootstrap.css",
+			"distance",
+			"Global",
+			"ui.bootstrap",
+			"static",
+			"exports(",
+			"app",
+			"db",
+			"static",
+			"bar",
+			"show",
+			"show()",
+			"post",
+			"distance",
+			"notes",
+			"distance",
+			"date",
+			"distance",
+			"content",
+			"Content",
+			"tent",
+			"Content",
+			"Create New Run",
+			"title",
+			"\"An Run about MEAN\"",
+			"title",
+			"Title",
+			"title",
+			"<",
+			"title",
+			"Article",
+			"article",
+			"Article",
+			"article",
+			"articleId",
+			"article",
+			"Articles",
+			"articles",
+			"databas",
+			"type: Double,",
+			"article",
+			"Article",
+			"date",
+			"distance",
+			"title",
+			"require",
+			"Article",
+			"\"}];\n",
+			"timber example page",
+			"kittens",
+			"fluffy",
+			"27017",
+			"mongoo",
+			"mon",
+			"package",
+			"node"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"'",
+			"logger",
+			"Logger",
+			"log",
+			"Log",
+			"Logger",
+			"logger",
+			"Logger",
+			"log",
+			"notes",
+			"Add New Run",
+			"Run",
+			"run",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "package.json",
+					"settings":
+					{
+						"buffer_size": 1063,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								309,
+								309
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 15476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								301,
+								301
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"settings":
+					{
+						"buffer_size": 837,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										177,
+										187
+									],
+									[
+										437,
+										447
+									],
+									[
+										739,
+										751
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								553,
+								553
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 2,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 594.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "karma/karma-unit.tpl.js",
+					"settings":
+					{
+						"buffer_size": 1771,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								917,
+								917
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 891.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Andrew/Documents/My Web Sites/restclient-progenex.json",
+					"settings":
+					{
+						"buffer_size": 1006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1006
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 13601.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Gruntfile.js",
+					"settings":
+					{
+						"buffer_size": 17882,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9252,
+								9252
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 11042.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/app/about/about.js",
+					"settings":
+					{
+						"buffer_size": 592,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								60,
+								60
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "build/index.html",
+					"settings":
+					{
+						"buffer_size": 5740,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								150,
+								150
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 48.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"server",
+				"angular/server.js"
+			],
+			[
+				"services",
+				"angular/services.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 244.0,
+	"status_bar_visible": true
+}

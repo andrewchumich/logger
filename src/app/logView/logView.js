@@ -1,24 +1,24 @@
-angular.module( 'ngBoilerplate.about', [
+angular.module( 'ngBoilerplate.logView', [
   'ui.router',
-  //'placeholders',
   'ui.bootstrap'
 ])
 
 .config(function config( $stateProvider ) {
-  $stateProvider.state( 'about', {
-    url: '/about',
+  $stateProvider.state( 'logView', {
+    url: '/logView',
     views: {
       "main": {
         controller: 'AboutCtrl',
-        templateUrl: 'about/about.tpl.html'
+        templateUrl: 'logView/logView.tpl.html'
       }
     },
     data:{ pageTitle: 'What is It?' }
   });
 })
 
-.controller( 'AboutCtrl', function AboutCtrl( $scope ) {
+.controller( 'LogViewCtrl', function LogViewCtrl( $scope, $firebase ) {
   // This is simple a demo for UI Boostrap.
+  $scope.log = $firebase(new Firebase('runninglog.firebaseio.com/users/12345/userLogs'));
   $scope.dropdownDemoItems = [
     "The first choice!",
     "And another choice for you.",

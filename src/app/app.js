@@ -3,7 +3,9 @@ angular.module( 'ngBoilerplate', [
   'templates-common',
   'ngBoilerplate.home',
   'ngBoilerplate.about',
-  'ui.router'
+  'ngBoilerplate.logView',
+  'ui.router',
+  'firebase'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
