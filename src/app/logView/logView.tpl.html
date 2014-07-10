@@ -1,6 +1,11 @@
 <div class="row">
   <div class="container">
-    Here i am!
-    {{ log }}
+    <h1>Running Log Entries for {{ params }}:</h1>
+    <ul>
+      <li ng-repeat="entry in log.running.entries | orderBy:'metrics.date'">{{entry.metrics.date | date : 'mediumDate'}}</li>
+    </ul>
+    <pre>
+      {{ log.running | json }}
+    </pre>
   </div>
 </div>
