@@ -1,8 +1,9 @@
 <div class="row">
   <div class="container">
     <h1>Running Log Entries for {{ params }}:</h1>
+    Number of dates in advance: <input type='number' value=7 ng-model='range'>
     <ul>
-      <li ng-repeat="entry in log.running.entries | orderBy:'metrics.date' | dateFilter:params">{{entry.metrics.date | date : 'mediumDate'}}</li>
+      <li ng-repeat="entry in log.running.entries | orderBy:'metrics.date' | dateFilter:params:range">{{entry.metrics.date | date : 'mediumDate'}}</li>
     </ul>
     <pre>
       {{ log.running | json }}
