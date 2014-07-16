@@ -24,15 +24,19 @@ angular.module( 'ngBoilerplate.logView', [
   return function (objects, dateObject, days_ahead) {
       var dateList = [];
       days_ahead = (typeof days_ahead === "undefined") ? 7 : days_ahead;
-      console.log(dateObject);
-      if(objects != null) {
+
+      if(objects != null && dateObject != null) {
         for(var i = 0; i < objects.length; i++){
-          var today = dateObject.getTime();
-          var seven_days_ahead = today + days_ahead*24*60*60*1000;
+          var today = dateObject.getTime() - 24*60*60*1000;
+          var seven_days_ahead = today + (days_ahead - 1)*24*60*60*1000;
           var date = [objects[i].metrics.date.substring(0,4),objects[i].metrics.date.substring(5,7),objects[i].metrics.date.substring(8,10)];
           var object_date = new Date(date[0], date[1]-1, date[2]).getTime();
-          if (seven_days_ahead >= object_date && today <= object_date) {
+
+          if (seven_days_ahead >= object_date && today < object_date) {
             dateList.push(objects[i]);
+/*            console.log('SEVEN DAYS AHEAD: '+seven_days_ahead);
+            console.log('Object Date: '+object_date);
+            console.log('TODAY: '+today);*/
           }
         }
       }
@@ -42,9 +46,18 @@ angular.module( 'ngBoilerplate.logView', [
 
 .controller( 'LogViewCtrl', function LogViewCtrl( $scope, $firebase, $stateParams ) {
   // This is simple a demo for UI Boostrap.
+  $scope.log = $firebase(new Firebase('runninglog.firebaseio.com/users/12345/userLogs/running'));
   $scope.beginningOfWeek = new Date();
+  $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getUTCDate() - $scope.beginningOfWeek.getUTCDay() + 1);
   $scope.changeDay = function(number) {
-    $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate() + number);
+    $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getUTCDate() + number);
+  };
+  $scope.setDate = function(date) {
+    console.log(date);
+    if (date != null){
+      $scope.beginningOfWeek = new Date(date);
+      $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getUTCDate());
+    }
   };
   $scope.getDayOfWeek = function() {
     switch($scope.beginningOfWeek.getDay()) {
@@ -64,7 +77,6 @@ angular.module( 'ngBoilerplate.logView', [
         return 'Saturday';
     }
   };
-  $scope.log = $firebase(new Firebase('runninglog.firebaseio.com/users/12345/userLogs/'));
   $scope.dropdownDemoItems = [
     "The first choice!",
     "And another choice for you.",
