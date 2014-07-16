@@ -1,10 +1,26 @@
 <div class="row">
   <div class="container">
-    <h1>Running Log Entries for {{ params }}:</h1>
-    Number of dates in advance: <input type='number' value=7 ng-model='range'>
+    <h1>Week of:<br>{{ getDayOfWeek() }}, {{ beginningOfWeek | date:'longDate' }}:</h1>
+    <div class='row'>
+      <div class='col-md-2'>
+        <button class='btn btn-success btn-sm' ng-click='changeDay(-7)'>Previous Week</button><br>
+      </div>
+      <div class='col-md-2'>
+        <button class='btn btn-primary btn-sm' ng-click='changeDay(7)'>Following Week</button><br><br>
+      </div>
+    </div>
+
     <ul>
-      <li ng-repeat="entry in log.running.entries | orderBy:'metrics.date' | dateFilter:params:range">{{entry.metrics.date | date : 'mediumDate'}}</li>
+      <li ng-repeat="entry in log.running.entries | orderBy:'metrics.date' | dateFilter:beginningOfWeek">{{entry.metrics.date | date : 'mediumDate'}}</li>
     </ul>
+    <div class='row'>
+      <div>
+        <form action="#">
+        Date: <input type='date' class='form-control' ng-model='formDate'><br>
+        <input type='submit' value='Go To Date'><br>
+        </form>
+      </div>
+    </div>
     <pre>
       {{ log.running | json }}
     </pre>
