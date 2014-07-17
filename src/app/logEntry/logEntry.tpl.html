@@ -1,0 +1,19 @@
+<div class='container'>
+
+	<div ng-repeat='page in logTemplate.pages'>
+		
+			PAGE
+			<div ng-repeat='metric in page.metrics'>
+					{{logTemplate.metrics[metric].text}}
+					<div ng-switch on="logTemplate.metrics.{{ metric }}.type">
+						<div ng-switch-when="text"><ac-text></ac-text></div>
+						<div ng-switch-when="date"><ac-date></ac-date></div>
+						<div ng-switch-when="number"><ac-number></ac-number></div>
+						<div ng-switch-when="time"><ac-time></ac-time></div>
+						<div ng-switch-when="enum"><ac-enum></ac-enum></div>
+					</div>
+
+			</div>
+			<br><br>
+	</div>
+</div>

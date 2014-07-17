@@ -75,6 +75,8 @@ angular.module( 'ngBoilerplate.logView', [
         return 'Friday';  
       case 6:
         return 'Saturday';
+      default:
+        return 'ERROR: DAY NOT FOUND';
     }
   };
   $scope.dropdownDemoItems = [
