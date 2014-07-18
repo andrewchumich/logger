@@ -21,7 +21,6 @@ angular.module( 'ngBoilerplate.logEntry', [
 })
 
 
-
 .controller( 'LogEntryCtrl', function LogViewCtrl( $scope, $firebase, $stateParams ) {
   // This is simple a demo for UI Boostrap.
 
@@ -30,14 +29,20 @@ angular.module( 'ngBoilerplate.logEntry', [
 
 })
 
+
+
 .directive('acText', function() {
   return {
     restrict: 'E',
     templateUrl: 'logEntry/LogDirectives/textInput.tpl.html'
   };
 })
-
-
+.directive('acTextarea', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'logEntry/LogDirectives/textareaInput.tpl.html'
+  };
+})
 .directive('acDate', function() {
   return {
     restrict: 'E',
@@ -56,7 +61,6 @@ angular.module( 'ngBoilerplate.logEntry', [
     templateUrl: 'logEntry/LogDirectives/numberInput.tpl.html'
   };
 })
-
 .directive('acEnum', function() {
   return {
     restrict: 'E',

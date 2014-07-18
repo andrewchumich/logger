@@ -7,6 +7,7 @@
 					{{logTemplate.metrics[metric].text}}
 					<div ng-switch on="logTemplate.metrics.{{ metric }}.type">
 						<div ng-switch-when="text"><ac-text></ac-text></div>
+						<div ng-switch-when="textarea"><ac-textarea></ac-textarea></div>
 						<div ng-switch-when="date"><ac-date></ac-date></div>
 						<div ng-switch-when="number"><ac-number></ac-number></div>
 						<div ng-switch-when="time"><ac-time></ac-time></div>

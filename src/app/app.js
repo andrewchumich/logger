@@ -1,6 +1,7 @@
 angular.module( 'ngBoilerplate', [
   'templates-app',
   'templates-common',
+  'ui.bootstrap',
   'ngBoilerplate.home',
   'ngBoilerplate.about',
   'ngBoilerplate.logView',
