@@ -20,9 +20,11 @@ angular.module( 'ngBoilerplate.logView', [
 
 })
 
+//custom filter to return objects whose date attribute is within a certain range
 .filter('dateFilter', function() {
   return function (objects, dateObject, days_ahead) {
       var dateList = [];
+      console.log("IM IN HERE: "+objects);
       days_ahead = (typeof days_ahead === "undefined") ? 7 : days_ahead;
 
       if(objects != null && dateObject != null) {
@@ -31,12 +33,12 @@ angular.module( 'ngBoilerplate.logView', [
           var seven_days_ahead = today + (days_ahead - 1)*24*60*60*1000;
           var date = [objects[i].metrics.date.substring(0,4),objects[i].metrics.date.substring(5,7),objects[i].metrics.date.substring(8,10)];
           var object_date = new Date(date[0], date[1]-1, date[2]).getTime();
-
+          console.log('SEVEN DAYS AHEAD: '+seven_days_ahead);
+          console.log('Object Date: '+object_date);
+          console.log('TODAY: '+today);
+          
           if (seven_days_ahead >= object_date && today < object_date) {
             dateList.push(objects[i]);
-/*            console.log('SEVEN DAYS AHEAD: '+seven_days_ahead);
-            console.log('Object Date: '+object_date);
-            console.log('TODAY: '+today);*/
           }
         }
       }

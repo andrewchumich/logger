@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"date",
+				"dateObject"
+			],
+			[
+				"foll",
+				"followingWeek"
+			],
+			[
+				"t",
+				"today"
+			],
+			[
+				"da",
+				"days_ahead"
+			],
+			[
+				"obe",
+				"object_date"
+			],
+			[
 				"req",
 				"requiresAdmin"
 			],
@@ -180,84 +200,42 @@
 	"buffers":
 	[
 		{
-			"file": "build/index.html",
-			"settings":
-			{
-				"buffer_size": 5821,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/index.html",
-			"settings":
-			{
-				"buffer_size": 5195,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "Searching 18 files for \"main\" (case sensitive)\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\about\\about.js:\n    9      url: '/about',\n   10      views: {\n   11:       \"main\": {\n   12          controller: 'AboutCtrl',\n   13          templateUrl: 'about/about.tpl.html'\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\about\\about.tpl.html:\n   85        href=\"http://getbootstrap.com\">hop on over</a> and check it out; it's\n   86      pretty sweet. Anyway, all that wonderful stylistic goodness comes built in.\n   87:     The LESS files are available for you to import in your main stylesheet as\n   88      needed - no excess, no waste. There is also a dedicated place to override\n   89      variables and mixins to suit your specific needs, so updating to the latest\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\home\\home.js:\n   27      url: '/home',\n   28      views: {\n   29:       \"main\": {\n   30          controller: 'HomeCtrl',\n   31          templateUrl: 'home/home.tpl.html'\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\home\\home.tpl.html:\n   69        <h4><i class=\"fa fa-retweet\"></i> Modularization</h4>\n   70        <p>\n   71:         Supports a structure that maintains separation of concerns while\n   72          ensuring maximum code reuse.\n   73        </p>\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\home\\README.md:\n   15  - `home.js` - defines the module.\n   16  - `home.less` - module-specific styles; this file is imported into\n   17:   `src/less/main.less` manually by the developer.\n   18  - `home.spec.js` - module unit tests.\n   19  - `home.tpl.html` - the route template.\n   ..\n   44  makes each module more self-contained. We use [ui-router](https://github.com/angular-ui/ui-router) to create\n   45  a state for our 'home' page. We set the url we'd like to see in the address bar\n   46: as well as the controller and template file to load. Specifying \"main\" as our view\n   47: means the controller and template will be loaded into the <div ui-view=\"main\"/> element\n   48  of the root template (aka index.html). Read more over at the [ui-router wiki](https://github.com/angular-ui/ui-router/wiki).\n   49  Finally we add a custom data property, pageTitle, which will be used to set the page's\n   ..\n   55      url: '/home',\n   56      views: {\n   57:       \"main\": {\n   58          controller: 'HomeCtrl',\n   59          templateUrl: 'home/home.tpl.html'\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\README.md:\n   29  ## `app.js`\n   30  \n   31: This is our main app configuration file. It kickstarts the whole process by\n   32  requiring all the modules from `src/app` that we need. We must load these now to\n   33  ensure the routes are loaded. If as in our \"products\" example there are\n   ..\n   66  ```\n   67  \n   68: Use the main applications run method to execute any code after services\n   69  have been instantiated.\n   70  \n   ..\n   74  ```\n   75  \n   76: And then we define our main application controller. This is a good place for logic\n   77  not specific to the template or route, such as menu logic or page title wiring.\n   78  \n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\index.html:\n   90      </div>\n   91  \n   92:     <div class=\"container\" ui-view=\"main\"></div>\n   93  \n   94      <footer class=\"footer\">\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\less\\main.less:\n    1  /**\n    2:  * This is the main application stylesheet. It should include or import all\n    3   * stylesheets used throughout the application as this is the only stylesheet in\n    4   * the Grunt configuration that is automatically processed.\n    .\n   15  \n   16  /**\n   17:  * This is our main variables file. We must include it last so we can overwrite any variable\n   18   * definitions in our imported stylesheets.\n   19   */\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\less\\README.md:\n    2  \n    3  This folder is actually fairly self-explanatory: it contains your LESS/CSS files to be compiled during the build. \n    4: The only important thing to note is that *only* `main.less` will be processed during the build, meaning that all\n    5  other stylesheets must be *imported* into that one.\n    6  \n    7: This should operate somewhat like the routing; the `main.less` file contains all of the site-wide styles, while\n    8  any styles that are route-specific should be imported into here from LESS files kept alongside the JavaScript\n    9  and HTML sources of that component. For example, the `home` section of the site has some custom styles, which\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\less\\variables.less:\n    1  /**\n    2   * These are the variables used throughout the application. This is where \n    3:  * overwrites that are not specific to components should be maintained.\n    4   */\n    5  \n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\README.md:\n   17    |  |- plusOne/\n   18    |- less/\n   19:   |  |- main.less\n   20    |  |- variables.less\n   21    |- index.html\n   ..\n   39  that should contain all markup that applies to everything in the app, such as\n   40  the header and footer. It declares with `ngApp` that this is `ngBoilerplate`,\n   41: specifies the main `AppCtrl` controller, and contains the `ngView` directive\n   42  into which route templates are placed.\n   43  \n\n19 matches across 11 files\n\n\nSearching 4 files for \"about\" (case sensitive)\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\build\\src\\app\\about\\about.js:\n    1: angular.module( 'ngBoilerplate.about', [\n    2    'ui.router',\n    3    //'placeholders',\n    .\n    6  \n    7  .config(function config( $stateProvider ) {\n    8:   $stateProvider.state( 'about', {\n    9:     url: '/about',\n   10      views: {\n   11        \"main\": {\n   12          controller: 'AboutCtrl',\n   13:         templateUrl: 'about/about.tpl.html'\n   14        }\n   15      },\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\build\\src\\app\\app.js:\n    3    'templates-common',\n    4    'ngBoilerplate.home',\n    5:   'ngBoilerplate.about',\n    6    'ngBoilerplate.logView',\n    7    'ui.router'\n\n6 matches across 2 files\n\n\nSearching 20 files for \"dummy test\" (case sensitive)\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\app.spec.js:\n   13      console.log('THIS IS AppCtrl: ' + AppCtrl);\n   14  \n   15:     it( 'should pass a dummy test', inject( function() {\n   16        expect( AppCtrl ).toBeTruthy();\n   17      }));\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\home\\home.spec.js:\n    8    beforeEach( module( 'ngBoilerplate.home' ) );\n    9  \n   10:   it( 'should have a dummy test', inject( function() {\n   11      expect( true ).toBeTruthy();\n   12    }));\n\n2 matches across 2 files\n\n\nSearching 12 files for \"isCurrentUrl\" (case sensitive)\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\app.spec.js:\n    1  describe( 'AppCtrl', function() {\n    2:   describe( 'isCurrentUrl', function() {\n    3      var AppCtrl, $location, $scope;\n    4  \n\n1 match in 1 file\n\n\nSearching 4933 files for \"vendor_files\" (case sensitive)\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\build.config.js:\n   49     * standardized files are collected for compilation, it is the user's job\n   50     * to ensure non-standardized (i.e. vendor-related) files are handled\n   51:    * appropriately in `vendor_files.js`.\n   52     *\n   53:    * The `vendor_files.js` property holds files to be automatically\n   54     * concatenated and minified with our project source files.\n   55     *\n   56:    * The `vendor_files.css` property holds any CSS files to be automatically\n   57     * included in our app.\n   58     *\n   59:    * The `vendor_files.assets` property holds any assets to be copied along\n   60     * with our app's assets. This structure is flattened, so it is not\n   61     * recommended that you use wildcards.\n   62     */\n   63:   vendor_files: {\n   64      js: [\n   65        'vendor/angular/angular.js',\n\nC:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\Gruntfile.js:\n  112          files: [\n  113            { \n  114:             src: [ '<%= vendor_files.assets %>' ],\n  115              dest: '<%= build_dir %>/assets/',\n  116              cwd: '.',\n  ...\n  133          files: [\n  134            {\n  135:             src: [ '<%= vendor_files.js %>' ],\n  136              dest: '<%= build_dir %>/',\n  137              cwd: '.',\n  ...\n  162        build_css: {\n  163          src: [\n  164:           '<%= vendor_files.css %>',\n  165            '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'\n  166          ],\n  ...\n  176          },\n  177          src: [ \n  178:           '<%= vendor_files.js %>', \n  179            'module.prefix', \n  180            '<%= build_dir %>/src/**/*.js', \n  ...\n  369          dir: '<%= build_dir %>',\n  370          src: [\n  371:           '<%= vendor_files.js %>',\n  372            '<%= build_dir %>/src/**/*.js',\n  373            '<%= html2js.common.dest %>',\n  374            '<%= html2js.app.dest %>',\n  375:           '<%= vendor_files.css %>',\n  376            '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'\n  377          ]\n  ...\n  387          src: [\n  388            '<%= concat.compile_js.dest %>',\n  389:           '<%= vendor_files.css %>',\n  390            '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'\n  391          ]\n  ...\n  401          dir: '<%= build_dir %>',\n  402          src: [ \n  403:           '<%= vendor_files.js %>',\n  404            '<%= html2js.app.dest %>',\n  405            '<%= html2js.common.dest %>',\n\n13 matches across 2 files\n",
-			"settings":
-			{
-				"buffer_size": 9548,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
 			"file": "src/app/app.js",
 			"settings":
 			{
-				"buffer_size": 623,
+				"buffer_size": 669,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/app/logView/logView.js",
+			"file": "src/app/logEntry/LogDirectives/enumInput.tpl.html",
 			"settings":
 			{
-				"buffer_size": 725,
+				"buffer_size": 182,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/app/logView/logView.tpl.html",
+			"file": "src/app/logEntry/logEntry.tpl.html",
 			"settings":
 			{
-				"buffer_size": 259,
+				"buffer_size": 1304,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/app/app.spec.js",
+			"file": "src/app/logEntry/logEntry.js",
 			"settings":
 			{
-				"buffer_size": 555,
+				"buffer_size": 1566,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "bower.json",
+			"file": "src/app/logEntry/LogDirectives/textareaInput.tpl.html",
 			"settings":
 			{
-				"buffer_size": 277,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vendor/angularfire/package.json",
-			"settings":
-			{
-				"buffer_size": 1048,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "build.config.js",
-			"settings":
-			{
-				"buffer_size": 2646,
+				"buffer_size": 42,
 				"line_ending": "Windows"
 			}
 		}
@@ -298,7 +276,25 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/build.config.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/dateInput.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/bower.json",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/textInput.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/timeInput.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/numberInput.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/thing.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/index.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/build/index.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/FormDirectives/dateInput.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/FormDirectives/textInput.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/app.spec.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/vendor/angularfire/package.json",
+		"/C/Users/Andrew/SkyDrive/Cross Country/pomes/python.py",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/python.py",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/vendor/angular/angular.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/about/about.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/Gruntfile.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/karma/karma-unit.tpl.js",
@@ -306,7 +302,6 @@
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/package.json",
 		"/C/Users/Andrew/Documents/My Web Sites/restclient-progenex.json",
 		"/C/Users/Andrew/Documents/csvtext.csv",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/app.spec.js",
 		"/C/Users/Andrew/Documents/My Web Sites/AngularFun/server.js",
 		"/C/Users/Andrew/Documents/My Web Sites/AngularFun/HomePage.html",
 		"/C/Users/Andrew/Documents/My Web Sites/AngularFun/app.js",
@@ -408,24 +403,7 @@
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/routes/articles.js",
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/server/controllers/runs.js",
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/articles/server/controllers/articles.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/server/models/run.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/articles/server/models/article.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/server/routes/timber.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/articles/public/controllers/articles.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/public/controllers/timber.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/public/views/index.html",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/app.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/public/routes/timber.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/server/config/env/development.js",
-		"/C/Users/Andrew/Documents/My Web Sites/test.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/t.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/system/views/index.html",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/init.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/system/services/menus.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/system/controllers/header.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/auth/views/login.html",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/mypackage/README.md",
-		"/C/Users/Andrew/Documents/My Web Sites/hello-world/package.json"
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/server/models/run.js"
 	],
 	"find":
 	{
@@ -436,6 +414,8 @@
 		"height": 135.0,
 		"where_history":
 		[
+			"C:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\home",
+			"C:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src",
 			"C:\\Users\\Andrew\\Documents\\Scorebook\\scorebook",
 			"C:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app",
 			"C:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src",
@@ -487,6 +467,26 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"vendor",
+			"View",
+			"time",
+			"number",
+			"date",
+			"tpl",
+			"server",
+			"-input",
+			"textInput",
+			"controller",
+			"ng-controller",
+			" </",
+			"logView",
+			"break",
+			"followingWeek",
+			");\n",
+			"$filter",
+			"filter:",
+			"filter(",
+			"filter",
 			"vendor_files",
 			"-copy",
 			"grunt watch",
@@ -594,27 +594,7 @@
 			"Create New Run",
 			"title",
 			"\"An Run about MEAN\"",
-			"title",
-			"Title",
-			"title",
-			"<",
-			"title",
-			"Article",
-			"article",
-			"Article",
-			"article",
-			"articleId",
-			"article",
-			"Articles",
-			"articles",
-			"databas",
-			"type: Double,",
-			"article",
-			"Article",
-			"date",
-			"distance",
-			"title",
-			"require"
+			"title"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -637,7 +617,7 @@
 			"run",
 			""
 		],
-		"reverse": false,
+		"reverse": true,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -646,282 +626,104 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "build/index.html",
+					"file": "src/app/app.js",
 					"settings":
 					{
-						"buffer_size": 5821,
+						"buffer_size": 669,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								142,
+								142
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1188.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/index.html",
+					"file": "src/app/logEntry/LogDirectives/enumInput.tpl.html",
 					"settings":
 					{
-						"buffer_size": 5195,
+						"buffer_size": 182,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1715,
-								1715
+								182,
+								182
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 693.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"file": "src/app/logEntry/logEntry.tpl.html",
 					"settings":
 					{
-						"buffer_size": 9548,
+						"buffer_size": 1304,
 						"regions":
 						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										178,
-										182
-									],
-									[
-										591,
-										595
-									],
-									[
-										910,
-										914
-									],
-									[
-										1207,
-										1211
-									],
-									[
-										1513,
-										1517
-									],
-									[
-										1924,
-										1928
-									],
-									[
-										2021,
-										2025
-									],
-									[
-										2328,
-										2332
-									],
-									[
-										2537,
-										2541
-									],
-									[
-										2808,
-										2812
-									],
-									[
-										2966,
-										2970
-									],
-									[
-										3253,
-										3257
-									],
-									[
-										3409,
-										3413
-									],
-									[
-										3672,
-										3676
-									],
-									[
-										4065,
-										4069
-									],
-									[
-										4255,
-										4259
-									],
-									[
-										4781,
-										4785
-									],
-									[
-										4931,
-										4935
-									],
-									[
-										5191,
-										5195
-									],
-									[
-										5500,
-										5505
-									],
-									[
-										5656,
-										5661
-									],
-									[
-										5684,
-										5689
-									],
-									[
-										5804,
-										5809
-									],
-									[
-										5810,
-										5815
-									],
-									[
-										6008,
-										6013
-									],
-									[
-										6313,
-										6323
-									],
-									[
-										6573,
-										6583
-									],
-									[
-										6873,
-										6885
-									],
-									[
-										7286,
-										7298
-									],
-									[
-										7333,
-										7345
-									],
-									[
-										7489,
-										7501
-									],
-									[
-										7618,
-										7630
-									],
-									[
-										7831,
-										7843
-									],
-									[
-										8042,
-										8054
-									],
-									[
-										8231,
-										8243
-									],
-									[
-										8405,
-										8417
-									],
-									[
-										8596,
-										8608
-									],
-									[
-										8793,
-										8805
-									],
-									[
-										8976,
-										8988
-									],
-									[
-										9197,
-										9209
-									],
-									[
-										9409,
-										9421
-									]
-								],
-								"scope": ""
-							}
 						},
 						"selection":
 						[
 							[
-								6973,
-								6973
+								174,
+								174
 							]
 						],
 						"settings":
 						{
-							"detect_indentation": false,
-							"output_tag": 5,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 6006.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "src/app/app.js",
+					"file": "src/app/logEntry/logEntry.js",
 					"settings":
 					{
-						"buffer_size": 623,
+						"buffer_size": 1566,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								165,
-								165
+								744,
+								744
 							]
 						],
 						"settings":
@@ -931,175 +733,33 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 396.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "src/app/logView/logView.js",
+					"file": "src/app/logEntry/LogDirectives/textareaInput.tpl.html",
 					"settings":
 					{
-						"buffer_size": 725,
+						"buffer_size": 42,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								390,
-								390
+								29,
+								29
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 198.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/app/logView/logView.tpl.html",
-					"settings":
-					{
-						"buffer_size": 259,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								232,
-								232
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/app/app.spec.js",
-					"settings":
-					{
-						"buffer_size": 555,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								439,
-								439
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "bower.json",
-					"settings":
-					{
-						"buffer_size": 277,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								248,
-								248
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "vendor/angularfire/package.json",
-					"settings":
-					{
-						"buffer_size": 1048,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								480,
-								480
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "build.config.js",
-					"settings":
-					{
-						"buffer_size": 2646,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2592,
-								2592
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1782.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
