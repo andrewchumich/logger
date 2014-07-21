@@ -2,7 +2,6 @@
     <div class="container">
         <h1>Week of:
             <br>{{ getDayOfWeek() }}, {{ beginningOfWeek | date:'longDate' }}:</h1>
-        {{ log.startOfWeek }}
         <div class='row'>
             <div class='col-md-2'>
                 <button class='btn btn-success btn-sm' ng-click='changeDay(-7)'>Previous Week</button>
@@ -18,7 +17,7 @@
         <table class='table table-hover'>
             <th>Date</th>
             <th>Distance</th>
-            <tr ng-repeat="entry in log.entries | orderBy:'metrics.date' | dateFilter">
+            <tr ng-repeat="entry in log.entries | orderBy:'metrics.date' | dateFilter:beginningOfWeek">
                 <td>
                     {{entry.metrics.date | date : 'mediumDate'}}
                 </td>
