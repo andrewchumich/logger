@@ -18,9 +18,9 @@
             <th>Date</th>
             <th>Distance</th>
             <th>Time of Day</th>
-            <tr ng-repeat="(name, entry) in log.entries | orderBy:'entry.metrics.date' | dateFilter:beginningOfWeek">
+            <tr ng-repeat="(name, entry) in log.entries | orderBy:metrics.date | dateFilter:beginningOfWeek">
                 <td>
-                    {{entry.metrics.date | date : 'longDate'}}
+                    {{entry.metrics.date | date : 'mediumDate'}}
                 </td>
                 <td>
                     {{ entry.metrics.distance }}

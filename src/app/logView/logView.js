@@ -93,6 +93,7 @@ angular.module( 'ngBoilerplate.logView', [
   };
   $scope.rangeDistance = 0;
   $scope.usedIndexes = [];
+  //I do not particularly like this implementation...
   $scope.distanceAdder = function (distance, name) {
     if(distance !== undefined && $scope.usedIndexes.indexOf(Number(name)) === -1){
       $scope.usedIndexes.push(name);
