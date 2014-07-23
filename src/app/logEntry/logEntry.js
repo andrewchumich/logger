@@ -15,7 +15,7 @@ angular.module( 'ngBoilerplate.logEntry', [
         templateUrl: 'logEntry/logEntry.tpl.html'
       }
     },
-    data:{ pageTitle: 'What is It?' }
+    data:{ pageTitle: 'Log Entry' }
   });
 
 })
@@ -29,9 +29,16 @@ angular.module( 'ngBoilerplate.logEntry', [
   $scope.logTemplate = $firebase(new Firebase('runninglog.firebaseio.com/logs/running'));
   $scope.currentPage = "2";
   $scope.formData = {};
+  $scope.progress = false;
   $scope.addFormData = function (data) {
-    $scope.entries.$add(data);
+    $scope.entries.$add(data).then(function (ref) {
+      $scope.progress = true;
+    });
   };
+  $scope.setEnumValue = function (metric, value) {
+    $scope.formData.metrics[metric] = value;
+  };
+
 })
 //Directive found at:http://stackoverflow.com/questions/15964278/angularjs-bind-ng-model-to-a-variable-which-name-is-stored-inside-another-vari
 //allows ng-model to be set by a variable in ng-repeat

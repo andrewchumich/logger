@@ -15,7 +15,7 @@ angular.module( 'ngBoilerplate.logView', [
         templateUrl: 'logView/logView.tpl.html'
       }
     },
-    data:{ pageTitle: 'What is It?' }
+    data:{ pageTitle: 'Log View' }
   });
 
 })
@@ -56,9 +56,15 @@ angular.module( 'ngBoilerplate.logView', [
     $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getUTCDate() - 6);
   }
   $scope.changeDay = function(number) {
+    //reset range distance whenever range is changed
+    //not a great solution, but it works
+    $scope.rangeDistance = 0;
+    $scope.usedIndexes = [];
     $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getUTCDate() + number);
   };
   $scope.setDate = function(date) {
+    $scope.rangeDistance = 0;
+    $scope.usedIndexes = [];
     console.log(date);
     if (date != null){
       $scope.beginningOfWeek = new Date(date);
@@ -83,6 +89,14 @@ angular.module( 'ngBoilerplate.logView', [
         return 'Saturday';
       default:
         return 'ERROR: DAY NOT FOUND';
+    }
+  };
+  $scope.rangeDistance = 0;
+  $scope.usedIndexes = [];
+  $scope.distanceAdder = function (distance, name) {
+    if(distance !== undefined && $scope.usedIndexes.indexOf(Number(name)) === -1){
+      $scope.usedIndexes.push(name);
+      $scope.rangeDistance += Number(distance);
     }
   };
   $scope.dropdownDemoItems = [

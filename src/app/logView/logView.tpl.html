@@ -14,16 +14,26 @@
             </div>
         </div>
 
-        <table class='table table-hover'>
+        <table id="rangeTable" class='table table-hover'>
             <th>Date</th>
             <th>Distance</th>
-            <tr ng-repeat="entry in log.entries | orderBy:'metrics.date' | dateFilter:beginningOfWeek">
+            <th>Time of Day</th>
+            <tr ng-repeat="(name, entry) in log.entries | orderBy:'entry.metrics.date' | dateFilter:beginningOfWeek">
                 <td>
-                    {{entry.metrics.date | date : 'mediumDate'}}
+                    {{entry.metrics.date | date : 'longDate'}}
                 </td>
                 <td>
                     {{ entry.metrics.distance }}
+                    {{ distanceAdder(entry.metrics.distance, name) }}
                 </td>
+                <td>
+                    {{ entry.metrics.timeOfDay }}
+                </td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>{{rangeDistance}}</td>
+                <td></td>
             </tr>
         </table>
         <div class='row'>
