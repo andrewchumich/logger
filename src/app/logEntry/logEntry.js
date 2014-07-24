@@ -8,7 +8,7 @@ angular.module( 'ngBoilerplate.logEntry', [
 
 .config(function config( $stateProvider ) {
   $stateProvider.state( 'logEntry', {
-    url: '/logEntry',
+    url: '/logEntry/:type',
     views: {
       "main": {
         controller: 'LogEntryCtrl',
@@ -23,12 +23,13 @@ angular.module( 'ngBoilerplate.logEntry', [
 
 .controller( 'LogEntryCtrl', function LogViewCtrl( $scope, $firebase, $stateParams ) {
   // This is simple a demo for UI Boostrap.
-
-  $scope.log = $firebase(new Firebase('runninglog.firebaseio.com/users/12345/userLogs/running/'));
-  $scope.entries = $firebase(new Firebase('runninglog.firebaseio.com/users/12345/userLogs/running/entries'));
-  $scope.logTemplate = $firebase(new Firebase('runninglog.firebaseio.com/logs/running'));
+  $scope.type = $stateParams.type;
+  $scope.log = $firebase(new Firebase('runninglog.firebaseio.com/users/12345/userLogs/'+$scope.type));
+  $scope.entries = $firebase(new Firebase('runninglog.firebaseio.com/users/12345/userLogs/'+$scope.type+'/entries'));
+  $scope.logTemplate = $firebase(new Firebase('runninglog.firebaseio.com/logs/'+$scope.type));
   $scope.currentPage = "2";
   $scope.formData = {};
+  $scope.formData.metrics = {};
   $scope.progress = false;
   $scope.addFormData = function (data) {
     $scope.entries.$add(data).then(function (ref) {
@@ -38,12 +39,20 @@ angular.module( 'ngBoilerplate.logEntry', [
   $scope.setEnumValue = function (metric, value) {
     $scope.formData.metrics[metric] = value;
   };
+  $scope.setDateValue = function (metric, value) {
+    var date = new Date(); 
+    if(value === 'YESTERDAY'){
+      date.setDate(date.getDate() - 1);
+    }
+
+    $scope.formData.metrics[metric] = date.getFullYear()+"-"+('0' + (date.getMonth()+1)).slice(-2)+"-"+('0' + date.getDate()).slice(-2);
+  };
 
 })
 //Directive found at:http://stackoverflow.com/questions/15964278/angularjs-bind-ng-model-to-a-variable-which-name-is-stored-inside-another-vari
 //allows ng-model to be set by a variable in ng-repeat
 .directive('acBindModel',function($compile){
-      return{
+      return {
         link:function(scope,element,attr){
           element[0].removeAttribute('ac-bind-model');
           element[0].removeAttribute('ac-parent');
