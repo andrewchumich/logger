@@ -6,6 +6,7 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.about',
   'ngBoilerplate.logView',
   'ngBoilerplate.logEntry',
+  'ngBoilerplate.logHome',
   'ui.router'
 ])
 

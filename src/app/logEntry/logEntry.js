@@ -99,6 +99,12 @@ angular.module( 'ngBoilerplate.logEntry', [
     templateUrl: 'logEntry/LogDirectives/enumInput.tpl.html'
   };
 })
+.directive('acBool', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'logEntry/LogDirectives/boolInput.tpl.html'
+  };
+})
 
 
 
