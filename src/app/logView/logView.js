@@ -28,7 +28,7 @@ angular.module( 'ngBoilerplate.logView', [
       if(objects != null && dateObject != null) {
         for(var object in objects){
           var today = dateObject.getTime() - 24*60*60*1000;
-          var seven_days_ahead = today + (days_ahead - 1)*24*60*60*1000;
+          var seven_days_ahead = today + (days_ahead)*24*60*60*1000;
           var date = [objects[object].metrics.date.substring(0,4),objects[object].metrics.date.substring(5,7),objects[object].metrics.date.substring(8,10)];
           var object_date = new Date(date[0], date[1]-1, date[2]).getTime();
           

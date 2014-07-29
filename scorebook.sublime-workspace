@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"LogHom",
+				"LogHomeCtrl"
+			],
+			[
+				"use",
+				"usedIndexes"
+			],
+			[
+				"range",
+				"rangeDistance"
+			],
+			[
+				"ran",
+				"rangeDistance"
+			],
+			[
+				"Log",
+				"LogViewCtrl"
+			],
+			[
+				"$stae",
+				"$stateParams"
+			],
+			[
 				"date",
 				"dateObject"
 			],
@@ -203,15 +227,15 @@
 			"file": "src/app/app.js",
 			"settings":
 			{
-				"buffer_size": 669,
+				"buffer_size": 696,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/app/logEntry/LogDirectives/enumInput.tpl.html",
+			"file": "src/app/logEntry/LogDirectives/boolInput.tpl.html",
 			"settings":
 			{
-				"buffer_size": 182,
+				"buffer_size": 179,
 				"line_ending": "Windows"
 			}
 		},
@@ -219,24 +243,48 @@
 			"file": "src/app/logEntry/logEntry.tpl.html",
 			"settings":
 			{
-				"buffer_size": 1304,
+				"buffer_size": 1541,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/app/logEntry/logEntry.js",
+			"file": "src/app/logHome/logHome.js",
 			"settings":
 			{
-				"buffer_size": 1566,
+				"buffer_size": 876,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/app/logEntry/LogDirectives/textareaInput.tpl.html",
+			"file": "src/app/logHome/logHome.tpl.html",
 			"settings":
 			{
-				"buffer_size": 42,
+				"buffer_size": 284,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/index.html",
+			"settings":
+			{
+				"buffer_size": 5036,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/app/logEntry/LogDirectives/enumInput.tpl.html",
+			"settings":
+			{
+				"buffer_size": 219,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "bower.json",
+			"settings":
+			{
+				"buffer_size": 344,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -276,15 +324,24 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logHome/logHome.spec.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logHome/logHome.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.spec.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.spec.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/enumInput.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/numberInput.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.tpl.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.js",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/build.config.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/dateInput.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/textInput.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/app.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/timeInput.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/textareaInput.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/build.config.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/bower.json",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/textInput.tpl.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/timeInput.tpl.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/numberInput.tpl.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/thing.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/index.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/build/index.html",
@@ -394,16 +451,7 @@
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/assets/css/articles.css",
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/controllers/articles.js",
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/services/articles.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/README.md",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/controllers/articles.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/test/karma/controllers/articles.spec.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/test/mocha/article/model.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/routes/articles.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/models/article.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/routes/articles.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/server/controllers/runs.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/articles/server/controllers/articles.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/timber/server/models/run.js"
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/README.md"
 	],
 	"find":
 	{
@@ -467,6 +515,20 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"<%= version %>",
+			"type",
+			"button",
+			"enum",
+			"View",
+			"value",
+			"date",
+			"distanceString",
+			"){\n",
+			"rangeD",
+			"dateList",
+			"ref",
+			"object",
+			"objects[i]",
 			"vendor",
 			"View",
 			"time",
@@ -580,21 +642,7 @@
 			"static",
 			"bar",
 			"show",
-			"show()",
-			"post",
-			"distance",
-			"notes",
-			"distance",
-			"date",
-			"distance",
-			"content",
-			"Content",
-			"tent",
-			"Content",
-			"Create New Run",
-			"title",
-			"\"An Run about MEAN\"",
-			"title"
+			"show()"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -626,7 +674,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -634,15 +682,15 @@
 					"file": "src/app/app.js",
 					"settings":
 					{
-						"buffer_size": 669,
+						"buffer_size": 696,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								142,
-								142
+								493,
+								493
 							]
 						],
 						"settings":
@@ -652,25 +700,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 297.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/app/logEntry/LogDirectives/enumInput.tpl.html",
+					"file": "src/app/logEntry/LogDirectives/boolInput.tpl.html",
 					"settings":
 					{
-						"buffer_size": 182,
+						"buffer_size": 179,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								182,
-								182
+								179,
+								179
 							]
 						],
 						"settings":
@@ -688,21 +736,22 @@
 					"file": "src/app/logEntry/logEntry.tpl.html",
 					"settings":
 					{
-						"buffer_size": 1304,
+						"buffer_size": 1541,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								174,
-								174
+								68,
+								68
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -712,51 +761,131 @@
 				},
 				{
 					"buffer": 3,
-					"file": "src/app/logEntry/logEntry.js",
+					"file": "src/app/logHome/logHome.js",
 					"settings":
 					{
-						"buffer_size": 1566,
+						"buffer_size": 876,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								744,
-								744
+								641,
+								641
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 396.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "src/app/logEntry/LogDirectives/textareaInput.tpl.html",
+					"file": "src/app/logHome/logHome.tpl.html",
 					"settings":
 					{
-						"buffer_size": 42,
+						"buffer_size": 284,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								29,
-								29
+								284,
+								284
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/AngularJS/AngularJS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/index.html",
+					"settings":
+					{
+						"buffer_size": 5036,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2864,
+								2864
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/app/logEntry/LogDirectives/enumInput.tpl.html",
+					"settings":
+					{
+						"buffer_size": 219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								219,
+								219
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "bower.json",
+					"settings":
+					{
+						"buffer_size": 344,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								344,
+								344
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -831,6 +960,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 194.0,
+	"side_bar_width": 292.0,
 	"status_bar_visible": true
 }
