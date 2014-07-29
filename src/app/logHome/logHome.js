@@ -1,9 +1,7 @@
 angular.module( 'ngBoilerplate.logHome', [
   'ui.router',
   //'placeholders',
-  'ui.bootstrap',
-  'firebase'
-
+  'ui.bootstrap'
 ])
 
 .config(function config( $stateProvider ) {

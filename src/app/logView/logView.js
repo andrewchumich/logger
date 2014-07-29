@@ -1,8 +1,7 @@
 angular.module( 'ngBoilerplate.logView', [
   'ui.router',
   //'placeholders',
-  'ui.bootstrap',
-  'firebase'
+  'ui.bootstrap'
 
 ])
 
