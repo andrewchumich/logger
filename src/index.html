@@ -45,6 +45,7 @@
             <span class="icon-bar"></span>
           </button>
           <div class="navbar-brand">
+           
             Logger
           </div>
         </div>
@@ -78,6 +79,18 @@
               <a href="https://github.com/jrzerr/scorebook/issues">
                 <i class="fa fa-comments"></i>
                 Support
+              </a>
+            </li>
+            <li ui-sref-active="active" ng-hide="loggedIn">
+              <a href ui-sref="logIn">
+                <i class="fa fa-users"></i>
+                Log In
+              </a>
+            </li>
+            <li ng-show="loggedIn">
+              <a href ui-sref="logIn" ng-click="logOut()">
+                <i class="fa fa-users"></i>
+                Log Out
               </a>
             </li>
           </ul>

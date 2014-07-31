@@ -224,34 +224,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/app/app.js",
-			"settings":
-			{
-				"buffer_size": 696,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/logEntry/LogDirectives/boolInput.tpl.html",
-			"settings":
-			{
-				"buffer_size": 179,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "src/app/logEntry/logEntry.tpl.html",
 			"settings":
 			{
 				"buffer_size": 1541,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/logHome/logHome.js",
-			"settings":
-			{
-				"buffer_size": 876,
 				"line_ending": "Windows"
 			}
 		},
@@ -264,14 +240,6 @@
 			}
 		},
 		{
-			"file": "src/index.html",
-			"settings":
-			{
-				"buffer_size": 5036,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "src/app/logEntry/LogDirectives/enumInput.tpl.html",
 			"settings":
 			{
@@ -280,11 +248,11 @@
 			}
 		},
 		{
-			"file": "bower.json",
+			"file": "src/app/app.js",
 			"settings":
 			{
-				"buffer_size": 344,
-				"line_ending": "Unix"
+				"buffer_size": 1238,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -324,7 +292,14 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/boolInput.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logHome/logHome.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/index.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/app.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/bower.json",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/build.config.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logHome/logHome.spec.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logHome/logHome.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.spec.js",
@@ -334,16 +309,11 @@
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/numberInput.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/dateInput.tpl.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/textInput.tpl.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/app.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/timeInput.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/textareaInput.tpl.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/build.config.js",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/bower.json",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/textInput.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/thing.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/index.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/build/index.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/FormDirectives/dateInput.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/FormDirectives/textInput.html",
@@ -449,9 +419,7 @@
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/test/karma/controllers/runs.spec.js",
 		"/C/Users/Andrew/Documents/Americlap/META-INF/MANIFEST.MF",
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/assets/css/articles.css",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/controllers/articles.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/services/articles.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/README.md"
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/controllers/articles.js"
 	],
 	"find":
 	{
@@ -459,9 +427,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 135.0,
+		"height": 0.0,
 		"where_history":
 		[
+			"C:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app",
 			"C:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app\\home",
 			"C:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src",
 			"C:\\Users\\Andrew\\Documents\\Scorebook\\scorebook",
@@ -515,6 +484,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"vendor_files",
+			"vendor_files.js",
+			"scripts",
+			"fire",
 			"<%= version %>",
 			"type",
 			"button",
@@ -638,11 +611,7 @@
 			"static",
 			"exports(",
 			"app",
-			"db",
-			"static",
-			"bar",
-			"show",
-			"show()"
+			"db"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -674,65 +643,11 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/app/app.js",
-					"settings":
-					{
-						"buffer_size": 696,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								493,
-								493
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 297.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/app/logEntry/LogDirectives/boolInput.tpl.html",
-					"settings":
-					{
-						"buffer_size": 179,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								179,
-								179
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "src/app/logEntry/logEntry.tpl.html",
 					"settings":
 					{
@@ -760,33 +675,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "src/app/logHome/logHome.js",
-					"settings":
-					{
-						"buffer_size": 876,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								641,
-								641
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
+					"buffer": 1,
 					"file": "src/app/logHome/logHome.tpl.html",
 					"settings":
 					{
@@ -812,35 +701,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "src/index.html",
-					"settings":
-					{
-						"buffer_size": 5036,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2864,
-								2864
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 495.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
+					"buffer": 2,
 					"file": "src/app/logEntry/LogDirectives/enumInput.tpl.html",
 					"settings":
 					{
@@ -866,29 +727,29 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "bower.json",
+					"buffer": 3,
+					"file": "src/app/app.js",
 					"settings":
 					{
-						"buffer_size": 344,
+						"buffer_size": 1238,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								344,
-								344
+								1130,
+								1130
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 891.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

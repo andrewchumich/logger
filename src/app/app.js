@@ -7,6 +7,7 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.logView',
   'ngBoilerplate.logEntry',
   'ngBoilerplate.logHome',
+  'ngBoilerplate.logIn',
   'firebase',
   'ui.router'
 ])
@@ -24,7 +25,7 @@ angular.module( 'ngBoilerplate', [
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
     }
   });
-
+  $scope.loggedIn = false;
   var ref = new Firebase('https://runninglog.firebaseio.com');
   var auth = new FirebaseSimpleLogin(ref, function(error, user) {
   if (error) {
@@ -32,15 +33,24 @@ angular.module( 'ngBoilerplate', [
     console.log(error);
   } else if (user) {
     // user authenticated to Firebase reference
+    $scope.loggedIn = true;
     console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
   } else {
     console.log("IM HERE");
     // user is logged out
   }
-/*  auth.login('password', {
-  email: 'andrewchumich@gmail.com',
-  password: 'pooter12'
-  });*/
+
+  $scope.attemptLogIn = function (data) {
+    
+    auth.login('password', {
+    email: data.email,
+    password: data.password
+    });
+  };
+
+  $scope.logOut = function () {
+    auth.logout();
+  };
 });
 })
 
