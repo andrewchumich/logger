@@ -30,6 +30,8 @@ angular.module( 'ngBoilerplate.logIn', [
       $scope.type = $scope.user.defaultLog;
     }
 	});
+
+
 	
 
 })

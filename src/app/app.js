@@ -19,7 +19,7 @@ angular.module( 'ngBoilerplate', [
 .run( function run () {
 })
 
-.controller( 'AppCtrl', function AppCtrl ( $scope, $location, $firebaseSimpleLogin ) {
+.controller( 'AppCtrl', function AppCtrl ( $scope, $location, $firebase, $firebaseSimpleLogin ) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
@@ -27,9 +27,11 @@ angular.module( 'ngBoilerplate', [
   });
 
 
-  $scope.id = "CHODE";
+  $scope.loaded = false;
+
   var ref = new Firebase('https://runninglog.firebaseio.com');
   $scope.auth = $firebaseSimpleLogin(ref);
+
 
   $scope.attemptLogIn = function (data) {
     
@@ -38,10 +40,12 @@ angular.module( 'ngBoilerplate', [
     password: data.password,
     rememberMe: data.rememberMe
     }).then(function(user) {
+
        console.log("Logged in as: ", user.uid);
 
     }, function(error) {
        console.error("Login failed: ", error);
+       $scope.error = error.toString();
     });
   };
 
@@ -49,6 +53,21 @@ angular.module( 'ngBoilerplate', [
     $scope.auth.$logout();
 
   };
+
+  $scope.$on('$firebaseSimpleLogin:login', function () {
+      $location.path('/logHome/');
+  });
+  $scope.firebase = $firebase(new Firebase('https://runninglog.firebaseio.com'));
+  $scope.firebase.$on('loaded', function () {
+    $scope.loaded = true;
+    //I'm not sure if the auth object will always return quickly upon instantiation
+    //if it doesn not, we will need to wait for it. There should be a better way!
+    while($scope.auth.user === null) {
+      console.log("WAITING FOR USER");
+    }
+    $scope.type = $scope.firebase.users[$scope.auth.user.id].defaultLog;
+    console.log("TYPE HERE: "+$scope.type);
+  });
 
 })
 

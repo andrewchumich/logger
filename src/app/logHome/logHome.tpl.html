@@ -1,5 +1,5 @@
 <div class="container">
-	<a role="button" ng-disabled="!loaded" ng-href="#/logEntry/{{type}}" class="btn btn-primary btn-lg btn-block">Log Entry</a>
+	<a role="button" ng-disabled="!auth.user" ng-href="#/logEntry/{{type}}" class="btn btn-primary btn-lg btn-block">Log Entry</a>
 	<br>
-	<a role="button" ng-disabled="!loaded" ng-href="#/logView/{{type}}" class="btn btn-primary btn-lg btn-block">View Log</a>
+	<a role="button" ng-disabled="!auth.user" ng-href="#/logView/{{type}}" class="btn btn-primary btn-lg btn-block">View Log</a>
 </div>
