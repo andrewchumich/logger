@@ -43,7 +43,7 @@ angular.module( 'ngBoilerplate.logView', [
 .controller( 'LogViewCtrl', function LogViewCtrl( $scope, $firebase, $stateParams ) {
   // This is simple a demo for UI Boostrap.
   $scope.type = $stateParams.type;
-  $scope.log = $firebase(new Firebase('runninglog.firebaseio.com/users/12345/userLogs/'+$scope.type));
+  $scope.log = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.id.toString()+'/userLogs/'+$scope.type));
   $scope.beginningOfWeek = new Date();
   /*
     weeks start on Mondays (this will be variable eventually), so the default page, if it is

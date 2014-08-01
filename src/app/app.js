@@ -19,39 +19,37 @@ angular.module( 'ngBoilerplate', [
 .run( function run () {
 })
 
-.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
+.controller( 'AppCtrl', function AppCtrl ( $scope, $location, $firebaseSimpleLogin ) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
     }
   });
-  $scope.loggedIn = false;
+
+
+  $scope.id = "CHODE";
   var ref = new Firebase('https://runninglog.firebaseio.com');
-  var auth = new FirebaseSimpleLogin(ref, function(error, user) {
-  if (error) {
-    // an error occurred while attempting login
-    console.log(error);
-  } else if (user) {
-    // user authenticated to Firebase reference
-    $scope.loggedIn = true;
-    console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
-  } else {
-    console.log("IM HERE");
-    // user is logged out
-  }
+  $scope.auth = $firebaseSimpleLogin(ref);
 
   $scope.attemptLogIn = function (data) {
     
-    auth.login('password', {
+    $scope.auth.$login('password', {
     email: data.email,
-    password: data.password
+    password: data.password,
+    rememberMe: data.rememberMe
+    }).then(function(user) {
+       console.log("Logged in as: ", user.uid);
+
+    }, function(error) {
+       console.error("Login failed: ", error);
     });
   };
 
   $scope.logOut = function () {
-    auth.logout();
+    $scope.auth.$logout();
+
   };
-});
+
 })
 
 ;

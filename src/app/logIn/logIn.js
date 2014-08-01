@@ -6,7 +6,7 @@ angular.module( 'ngBoilerplate.logIn', [
 
 .config(function config( $stateProvider ) {
   $stateProvider.state( 'logIn', {
-    url: '/logIn/',
+    url: '/logIn',
     views: {
       "main": {
         controller: 'LogInCtrl',
@@ -23,7 +23,7 @@ angular.module( 'ngBoilerplate.logIn', [
   $scope.logInData = {};
   // buttons will be disabled until user data is loaded
   $scope.loaded = false;
-  $scope.user = $firebase(new Firebase('runninglog.firebaseio.com/users/12345'));
+  $scope.user = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.id.toString()));
   $scope.user.$on('loaded', function () {
     $scope.loaded = true;
     if($scope.type === "") {

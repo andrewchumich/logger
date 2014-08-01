@@ -34,6 +34,7 @@
     </script>
   </head>
   <body>
+    ID: {{auth.user}}
     <div class="container">
       <div class="navbar navbar-default">
         <div class="navbar-header">
@@ -81,15 +82,15 @@
                 Support
               </a>
             </li>
-            <li ui-sref-active="active" ng-hide="loggedIn">
+            <li ui-sref-active="active" ng-hide="auth.user">
               <a href ui-sref="logIn">
-                <i class="fa fa-users"></i>
+                <i class="fa fa-user"></i>
                 Log In
               </a>
             </li>
-            <li ng-show="loggedIn">
+            <li ng-show="auth.user">
               <a href ui-sref="logIn" ng-click="logOut()">
-                <i class="fa fa-users"></i>
+                <i class="fa fa-user"></i>
                 Log Out
               </a>
             </li>
