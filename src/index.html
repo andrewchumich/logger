@@ -89,6 +89,12 @@
               </a>
             </li>
             <li ng-show="auth.user">
+              <a href ui-sref="logIn">
+                <i class="fa fa-rocket"></i>
+                {{type}}
+              </a>
+            </li>
+            <li ng-show="auth.user">
               <a href ui-sref="logIn" ng-click="logOut()">
                 <i class="fa fa-user"></i>
                 Log Out
