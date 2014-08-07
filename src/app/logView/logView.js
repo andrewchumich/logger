@@ -19,17 +19,7 @@ angular.module( 'ngBoilerplate.logView', [
 
 })
 
-//changes the row color depending on the runType attribute
-.directive('acTableClass',function($compile){
-      return {
-        link:function(scope,element,attr){
-          element[0].removeAttribute('ac-table-class');
-          element[0].setAttribute('class','success');
-          console.log("SCOPE: "+scope.entry.metrics.runType);
-          $compile(element[0])(scope);
-        }
-      };
-    })
+
 
 //custom filter to return objects whose date attribute is within a certain range
 .filter('dateFilter', function() {
@@ -110,6 +100,21 @@ angular.module( 'ngBoilerplate.logView', [
     if(distance !== undefined && $scope.usedIndexes.indexOf(Number(name)) === -1){
       $scope.usedIndexes.push(name);
       $scope.rangeDistance += Number(distance);
+    }
+  };
+
+  $scope.runTypeTableClass = function (runType) {
+    switch(runType){
+      case "Easy":
+        return "";
+      case "Workout":
+        return "info";
+      case "Long":
+        return "warning";
+      case "Race":
+        return "danger";
+      default:
+        return "";
     }
   };
   $scope.dropdownDemoItems = [
