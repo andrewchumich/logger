@@ -19,6 +19,18 @@ angular.module( 'ngBoilerplate.logView', [
 
 })
 
+//changes the row color depending on the runType attribute
+.directive('acTableClass',function($compile){
+      return {
+        link:function(scope,element,attr){
+          element[0].removeAttribute('ac-table-class');
+          element[0].setAttribute('class','success');
+          console.log("SCOPE: "+scope.entry.metrics.runType);
+          $compile(element[0])(scope);
+        }
+      };
+    })
+
 //custom filter to return objects whose date attribute is within a certain range
 .filter('dateFilter', function() {
   return function (objects, dateObject, days_ahead) {
