@@ -23,18 +23,18 @@ angular.module( 'ngBoilerplate.logView', [
 
 //custom filter to return objects whose date attribute is within a certain range
 .filter('dateFilter', function() {
-  return function (objects, dateObject, days_ahead) {
+  return function (entries, firstDay, days_ahead) {
       var dateList = [];
       days_ahead = (typeof days_ahead === "undefined") ? 7 : days_ahead;
-      if(objects != null && dateObject != null) {
-        for(var object in objects){
-          var today = dateObject.getTime() - 24*60*60*1000;
+      if(entries != null && firstDay != null) {
+        for(var entry in entries){
+          var today = firstDay.getTime() - 24*60*60*1000;
           var seven_days_ahead = today + (days_ahead)*24*60*60*1000;
-          var date = [objects[object].metrics.date.substring(0,4),objects[object].metrics.date.substring(5,7),objects[object].metrics.date.substring(8,10)];
-          var object_date = new Date(date[0], date[1]-1, date[2]).getTime();
+          var date = [entries[entry].metrics.date.substring(0,4),entries[entry].metrics.date.substring(5,7),entries[entry].metrics.date.substring(8,10)];
+          var entry_date = new Date(date[0], date[1]-1, date[2]).getTime();
           
-          if (seven_days_ahead >= object_date && today < object_date) {
-            dateList.push(objects[object]);
+          if (seven_days_ahead >= entry_date && today < entry_date) {
+            dateList.push(entries[entry]);
           }
         }
       }
@@ -42,7 +42,7 @@ angular.module( 'ngBoilerplate.logView', [
   };
 })
 
-.controller( 'LogViewCtrl', function LogViewCtrl( $scope, $firebase, $stateParams ) {
+.controller( 'LogViewCtrl', function LogViewCtrl( $scope, $firebase, $stateParams, dateFilterFilter ) {
   // This is simple a demo for UI Boostrap.
   $scope.type = $stateParams.type;
   $scope.current = {};
@@ -127,8 +127,15 @@ angular.module( 'ngBoilerplate.logView', [
   $scope.removeCurrent = function () {
     $scope.auth.$remove($scope.current.name);
   };
-
-  
+  $scope.rangeDistance = 0;
+  $scope.filterDates = function (dates, firstDay) {
+    $scope.filteredDates = dateFilterFilter(dates, firstDay);
+    $scope.rangeDistance = 0;
+    for(var i = 0; i < $scope.filteredDates.length; i++){
+      $scope.rangeDistance += $scope.filteredDates[i].metrics.distance;
+    }
+    return $scope.filteredDates;
+  };
   $scope.dropdownDemoItems = [
     "The first choice!",
     "And another choice for you.",

@@ -12,22 +12,21 @@
 
         </div>
 
-        <table id="rangeTable" class='table table-hover' ng-init="predicate = -date">
-            {{predicate}}
-            {{logTemplate.metrics.date}}
+        <table id="rangeTable" class='table table-hover'>
             <tr>
-                <th><a href="" ng-click="predicate = metrics[date]; reverse=!reverse">Date</th>
-                <th><a href="" ng-click="predicate = metrics[distance]; reverse=!reverse">Distance</a>
+                <th><a href="">Date</th>
+                <th><a href="">Distance</a>
                 </th>
-                <th><a href="" ng-click="predicate = metrics[timeOfDay]; reverse=!reverse">Time of Day</a>
+                <th><a href="">Time of Day</a>
                 </th>
             </tr>
-            <tr ng-repeat="(name, entry) in log.entries | dateFilter:beginningOfWeek" ng-class='runTypeTableClass(entry.metrics.runType)' ng-click="setCurrent(name, entry)">
+            <tr ng-repeat="(name, entry) in filterDates(log.entries, beginningOfWeek)" ng-class='runTypeTableClass(entry.metrics.runType)' ng-click="setCurrent(name, entry)">
                 <td>
+                    {{$id}}
                     {{entry.metrics.date | date : 'mediumDate'}}
                 </td>
                 <td>
-                    {{ entry.metrics.distance }} {{ distanceAdder(entry.metrics.distance, name) }}
+                    {{ entry.metrics.distance }}
                 </td>
                 <td>
                     {{ entry.metrics.timeOfDay }}
