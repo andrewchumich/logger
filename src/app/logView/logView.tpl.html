@@ -1,28 +1,28 @@
 <div class="row">
+    ENTRY: {{current.entry}}
+    NAME: {{current.name}}
     <div class="container">
         <h1>Week of:
             <br>{{ getDayOfWeek() }}, {{ beginningOfWeek | date:'longDate' }}:</h1>
         <div class='row'>
-            <div class='col-md-2'>
-                <button class='btn btn-success btn-sm' ng-click='changeDay(-7)'>Previous Week</button>
-                <br>
-            </div>
-            <div class='col-md-2'>
-                <button class='btn btn-primary btn-sm' ng-click='changeDay(7)'>Following Week</button>
-                <br>
-                <br>
-            </div>
+            <button class="btn btn-success btn-lg" ng-click='changeDay(-7)'>Previous Week</button>
+            <button class="btn btn-primary btn-lg" ng-click='changeDay(7)'>Following Week</button>
+            <br>
+            <br>
+
         </div>
 
         <table id="rangeTable" class='table table-hover' ng-init="predicate = -date">
+            {{predicate}}
+            {{logTemplate.metrics.date}}
             <tr>
-                <th><a href="" ng:click="predicate = 'metrics.date'; reverse=!reverse">Date</th>
-                <th><a href="" ng:click="predicate = 'metrics.distance'; reverse=!reverse">Distance</a>
+                <th><a href="" ng-click="predicate = metrics[date]; reverse=!reverse">Date</th>
+                <th><a href="" ng-click="predicate = metrics[distance]; reverse=!reverse">Distance</a>
                 </th>
-                <th><a href="" ng:click="predicate = 'metrics.timeOfDay'; reverse=!reverse">Time of Day</a>
+                <th><a href="" ng-click="predicate = metrics[timeOfDay]; reverse=!reverse">Time of Day</a>
                 </th>
             </tr>
-            <tr ng-repeat="(name, entry) in log.entries | dateFilter:beginningOfWeek" ng-class='runTypeTableClass(entry.metrics.runType)'>
+            <tr ng-repeat="(name, entry) in log.entries | dateFilter:beginningOfWeek" ng-class='runTypeTableClass(entry.metrics.runType)' ng-click="setCurrent(name, entry)">
                 <td>
                     {{entry.metrics.date | date : 'mediumDate'}}
                 </td>
@@ -32,6 +32,7 @@
                 <td>
                     {{ entry.metrics.timeOfDay }}
                 </td>
+
             </tr>
             <tr>
                 <td>Total</td>
@@ -39,6 +40,14 @@
                 <td></td>
             </tr>
         </table>
+        <div class="container well" ng-show="current">
+            <div ng-repeat="(metric, value) in current.entry.metrics">
+                {{firebase.logs[type].metrics[metric].text}}: {{value}}
+            </div>
+            <br>
+            <a href="" target="blank" class="btn btn-default btn-lg" role="button">Edit Entry</a>
+            <a href="" target="blank" class="btn btn-warning btn-lg" role="button">Delete Entry</a>
+        </div>
         <div class='row'>
             <div>
 
@@ -51,7 +60,7 @@
             </div>
         </div>
         <pre>
-      {{ log | json }}
+      {{ log.entries | json }}
     </pre>
     </div>
 </div>

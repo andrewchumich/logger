@@ -45,6 +45,7 @@ angular.module( 'ngBoilerplate.logView', [
 .controller( 'LogViewCtrl', function LogViewCtrl( $scope, $firebase, $stateParams ) {
   // This is simple a demo for UI Boostrap.
   $scope.type = $stateParams.type;
+  $scope.current = {};
 /*  $scope.log = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type));
 */  $scope.beginningOfWeek = new Date();
   /*
@@ -62,7 +63,7 @@ angular.module( 'ngBoilerplate.logView', [
     //not a great solution, but it works
     $scope.rangeDistance = 0;
     $scope.usedIndexes = [];
-    $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getUTCDate() + number);
+    $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate() + number);
   };
   $scope.setDate = function(date) {
     $scope.rangeDistance = 0;
@@ -117,6 +118,17 @@ angular.module( 'ngBoilerplate.logView', [
         return "";
     }
   };
+  $scope.setCurrent = function (name, entry) {
+ 
+    $scope.current.name = name;
+    $scope.current.entry = entry;
+  };
+
+  $scope.removeCurrent = function () {
+    $scope.auth.$remove($scope.current.name);
+  };
+
+  
   $scope.dropdownDemoItems = [
     "The first choice!",
     "And another choice for you.",
