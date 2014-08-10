@@ -34,13 +34,13 @@ angular.module( 'ngBoilerplate', [
 
   $scope.userSetup = function (user) {
     $scope.firebase.users = {};
-    $scope.firebase.users[user.uid.toString()] = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+user.uid.toString()));
-    $scope.firebase.users[user.uid.toString()].$on('loaded', function () {
+    $scope.firebase.users[user.uid.toString()] = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+user.uid.toString())).$asObject();
+    $scope.firebase.users[user.uid.toString()].$loaded().then(function () {
     console.log("TOTES LOADED");
     $scope.type = $scope.firebase.users[user.uid].defaultLog;
-    $scope.log = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type));
-    $scope.entries = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type+'/entries'));
-    $scope.logTemplate = $firebase(new Firebase('https://runninglog.firebaseio.com/logs/'+$scope.type));
+    $scope.log = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type)).$asObject();
+    $scope.entries = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type+'/entries')).$asObject();
+    $scope.logTemplate = $firebase(new Firebase('https://runninglog.firebaseio.com/logs/'+$scope.type)).$asObject();
     $scope.loaded = true;
     });
   };
@@ -68,8 +68,8 @@ angular.module( 'ngBoilerplate', [
   };
 
   $scope.firebase = {};
-  $scope.firebase.logs = $firebase(new Firebase('https://runninglog.firebaseio.com/logs'));
-  $scope.firebase.logs.$on('loaded', function () {
+  $scope.firebase.logs = $firebase(new Firebase('https://runninglog.firebaseio.com/logs')).$asObject();
+  $scope.firebase.logs.$loaded().then(function () {
     //I'm not sure if the auth object will always return quickly upon instantiation
     //there should be a way to wait for it?
     $scope.auth.$getCurrentUser().then(function (user) {

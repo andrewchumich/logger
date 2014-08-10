@@ -23,16 +23,13 @@ angular.module( 'ngBoilerplate.logEntry', [
 .controller( 'LogEntryCtrl', function LogViewCtrl( $scope, $location, $firebase, $stateParams ) {
   // This is simple a demo for UI Boostrap.
   $scope.type = $stateParams.type;
-/*  $scope.log = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type));
-  $scope.entries = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type+'/entries'));
-  $scope.logTemplate = $firebase(new Firebase('https://runninglog.firebaseio.com/logs/'+$scope.type));
-*/  $scope.currentPage = "2";
+  $scope.currentPage = "2";
   $scope.formData = {};
   $scope.formData.metrics = {};
   //progress: is the form complete and has it been successfully added to firebase?
   $scope.progress = false;
   $scope.addFormData = function (data) {
-    $scope.entries.$add(data).then(function (ref) {
+    $scope.entries.$push(data).then(function (ref) {
       $scope.progress = true;
       $location.path('/logView/'+$scope.type);
     });
