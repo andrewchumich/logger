@@ -309,7 +309,7 @@
 			"file": "src/app/logEntry/logEntry.js",
 			"settings":
 			{
-				"buffer_size": 2915,
+				"buffer_size": 3015,
 				"line_ending": "Windows"
 			}
 		}
@@ -485,7 +485,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 138.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"C:\\Users\\Andrew\\Documents\\Scorebook\\scorebook\\src\\app",
@@ -882,15 +882,15 @@
 					"file": "src/app/logEntry/logEntry.js",
 					"settings":
 					{
-						"buffer_size": 2915,
+						"buffer_size": 3015,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								568,
-								568
+								1144,
+								1646
 							]
 						],
 						"settings":
@@ -900,7 +900,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 816.0,
+						"translation.y": 918.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -29,7 +29,8 @@ angular.module( 'ngBoilerplate.logEntry', [
   //progress: is the form complete and has it been successfully added to firebase?
   $scope.progress = false;
   $scope.addFormData = function (data) {
-    $scope.entries.$push(data).then(function (ref) {
+    $scope.entries[data.metrics.date+"-"+Date.now().toString()] = data;
+    $scope.entries.$save().then(function (ref) {
       $scope.progress = true;
       $location.path('/logView/'+$scope.type);
     });
