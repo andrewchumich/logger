@@ -47,6 +47,17 @@ angular.module( 'ngBoilerplate.logEntry', [
     $scope.formData.metrics[metric] = date.getFullYear()+"-"+('0' + (date.getMonth()+1)).slice(-2)+"-"+('0' + date.getDate()).slice(-2);
   };
 
+  $scope.incrementNumberInput = function (name, difference) {
+    if($scope.formData.metrics[name] + difference < 0){
+      return;
+    }
+    if($scope.formData.metrics[name] == null || $scope.formData.metrics[name] === undefined) {
+      $scope.formData.metrics[name] = Number(difference);
+    }
+    else { 
+      $scope.formData.metrics[name] += Number(difference);
+    }
+  };
 })
 //Directive found at:http://stackoverflow.com/questions/15964278/angularjs-bind-ng-model-to-a-variable-which-name-is-stored-inside-another-vari
 //allows ng-model to be set by a variable in ng-repeat

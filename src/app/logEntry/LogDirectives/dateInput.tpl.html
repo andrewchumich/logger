@@ -1,3 +1,4 @@
+DATE: {{formData.metrics[metric] | date:'fullDate'}}
 <div ng-init="picker = false">
 	<div ng-hide="picker">
 		<br><button type="button" ng-click="setDateValue(metric, 'TODAY')" class="btn btn-primary btn-lg btn-block">Today</button><br>
