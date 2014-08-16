@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- font awesome from BootstrapCDN -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
@@ -45,8 +45,10 @@
             <span class="icon-bar"></span>
           </button>
           <div class="navbar-brand">
-           
-            Logger
+              <a href ui-sref="logHome">
+                <i class="fa fa-tree"></i>
+                Logger
+              </a>
           </div>
         </div>
         <div class="collapse navbar-collapse" collapse="menuCollapsed">
@@ -57,7 +59,7 @@
                 Home
               </a>
             </li>
-            <li ui-sref-active="active">
+           <!--  <li ui-sref-active="active">
               <a href ui-sref="about">
                 <i class="fa fa-info-circle"></i>
                 What is it?
@@ -68,7 +70,7 @@
                 <i class="fa fa-book"></i>
                 Read the Docs
               </a>
-            </li>
+            </li> -->
             <li>
               <a href="https://github.com/jrzerr/scorebook/">
                 <i class="fa fa-github-alt"></i>
@@ -87,12 +89,12 @@
                 Log In
               </a>
             </li>
-            <li ng-show="auth.user">
+<!--             <li ng-show="auth.user">
               <a href ui-sref="logIn">
                 <i class="fa fa-rocket"></i>
                 {{type}}
               </a>
-            </li>
+            </li> -->
             <li ng-show="auth.user">
               <a href ui-sref="logIn" ng-click="logOut()">
                 <i class="fa fa-user"></i>
@@ -110,19 +112,17 @@
       <div class="container">
         <div class="footer-inner">
           <ul class="social">
-            <li><a target="_blank" href="http://gplus.to/joshdmiller"><i class="fa fa-google-plus-sign"></i></a></li>
-            <li><a target="_blank" href="http://twitter.com/joshdmiller"><i class="fa fa-twitter-sign"></i></a></li>
-            <li><a target="_blank" href="http://linkedin.com/in/joshdmiller"><i class="fa fa-linkedin-sign"></i></a></li>
-            <li><a target="_blank" href="http://github.com/ngbp/ngbp"><i class="fa fa-github-sign"></i></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/pub/andrew-chumich/68/13b/10"><i class="fa fa-linkedin-sign"></i></a></li>
+            <li><a target="_blank" href="https://github.com/andrewchumich"><i class="fa fa-github-sign"></i></a></li>
           </ul>
           
 
           <p>
-            (c) 2013 <a href="http://www.joshdavidmiller.com">Josh David Miller</a>. 
-            <a href="http://github.com/ngbp/ngbp/fork_select">Fork this</a>
-            to kickstart your next project.
+            (c) 2014 <a href="http://andrewchumich.github.io">Andrew Chumich</a>
             <br />
-            ngbp is based on
+            Timber Logger is based on:
+            <a href="http://github.com/ngbp/ngbp">ngBoilerplate</a>,
+            <a href="https://www.firebase.com/">Firebase</a>,
             <a href="http://www.angularjs.org">AngularJS</a>,
             <a href="http://getbootstrap.com">Bootstrap</a>, 
             <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,
