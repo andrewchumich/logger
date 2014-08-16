@@ -4,7 +4,7 @@
     <div class="container">
         <h1>Week of:
             <br>{{ getDayOfWeek() }}, {{ beginningOfWeek | date:'longDate' }}:</h1>
-        <div class='row'>
+        <div>
             <button class="btn btn-success btn-lg" ng-click='changeDay(-7)'>Previous Week</button>
             <button class="btn btn-primary btn-lg" ng-click='changeDay(7)'>Following Week</button>
             <br>
@@ -46,7 +46,7 @@
             <a href="" target="blank" class="btn btn-default btn-lg" role="button">Edit Entry</a>
             <a href="" target="blank" class="btn btn-warning btn-lg" role="button">Delete Entry</a>
         </div>
-        <div class='row'>
+        <div>
             <div>
 
                 Go To Date:
