@@ -67,13 +67,13 @@
                         </a>
                     </li>
                     <li ui-sref-active="active" ng-show="auth.user">
-                        <a href ui-sref="logEntry">
+                        <a ng-href="#/logEntry/{{type}}">
                             <i class="fa fa-trophy"></i>
                             Log Entry
                         </a>
                     </li>
                     <li ui-sref-active="active" ng-show="auth.user">
-                        <a href ui-sref="logView">
+                        <a ng-href="#/logView/{{type}}">
                             <i class="fa fa-archive"></i>
                             Log View
                         </a>

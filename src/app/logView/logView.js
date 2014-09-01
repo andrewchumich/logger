@@ -52,11 +52,11 @@ angular.module( 'ngBoilerplate.logView', [
     weeks start on Mondays (this will be variable eventually), so the default page, if it is
     currently a Sunday, should be the previous Monday
   */
-  if($scope.beginningOfWeek.getUTCDay() !== 0){
-    $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getUTCDate() - $scope.beginningOfWeek.getUTCDay() + 1);
+  if($scope.beginningOfWeek.getDay() !== 0){
+    $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate() - $scope.beginningOfWeek.getDay() + 1);
   }
   else {
-    $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getUTCDate() - 6);
+    $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate() - 6);
   }
   $scope.changeDay = function(number) {
     //reset range distance whenever range is changed
@@ -71,7 +71,7 @@ angular.module( 'ngBoilerplate.logView', [
     console.log(date);
     if (date != null){
       $scope.beginningOfWeek = new Date(date);
-      $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getUTCDate());
+      $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate());
     }
   };
   $scope.getDayOfWeek = function() {
