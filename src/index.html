@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="ngBoilerplate" ng-controller="AppCtrl">
-  <head>
+
+<head>
     <title ng-bind="pageTitle"></title>
 
-  
+
     <!-- social media tags -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@joshdmiller">
@@ -22,44 +23,62 @@
     <!-- font awesome from BootstrapCDN -->
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
-    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+    <!-- compiled CSS -->
+    <% styles.forEach( function ( file ) { %>
+        <link rel="stylesheet" type="text/css" href="<%= file %>" />
+        <% }); %>
 
-    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
-    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+            <!-- compiled JavaScript -->
+            <% scripts.forEach( function ( file ) { %>
+                <script type="text/javascript" src="<%= file %>"></script>
+                <% }); %>
 
-    <!-- it's stupid to have to load it here, but this is for the +1 button -->
-    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-      { "parsetags": "explicit" }
-    </script>
-  </head>
-  <body>
+                    <!-- it's stupid to have to load it here, but this is for the +1 button -->
+                    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+                    {
+                        "parsetags": "explicit"
+                    }
+                    </script>
+</head>
+
+<body>
     <div class="container">
-      <div class="navbar navbar-default">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true"
-            ng-click="menuCollapsed = ! menuCollapsed">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="navbar-brand">
-              <a href ui-sref="logHome">
-                <i class="fa fa-tree"></i>
-                Logger
-              </a>
-          </div>
-        </div>
-        <div class="collapse navbar-collapse" collapse="menuCollapsed">
-          <ul class="nav navbar-nav">
-            <li ui-sref-active="active">
-              <a href ui-sref="logHome">
-                <i class="fa fa-home"></i>
-                Home
-              </a>
-            </li>
-           <!--  <li ui-sref-active="active">
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true" ng-click="menuCollapsed = ! menuCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand">
+                    <a href ui-sref="logHome">
+                        <i class="fa fa-tree"></i>
+                        Logger
+                    </a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" collapse="menuCollapsed">
+                <ul class="nav navbar-nav">
+                    <li ui-sref-active="active">
+                        <a href ui-sref="logHome">
+                            <i class="fa fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li ui-sref-active="active" ng-show="auth.user">
+                        <a href ui-sref="logEntry">
+                            <i class="fa fa-trophy"></i>
+                            Log Entry
+                        </a>
+                    </li>
+                    <li ui-sref-active="active" ng-show="auth.user">
+                        <a href ui-sref="logView">
+                            <i class="fa fa-archive"></i>
+                            Log View
+                        </a>
+                    </li>
+                    <!--  <li ui-sref-active="active">
               <a href ui-sref="about">
                 <i class="fa fa-info-circle"></i>
                 What is it?
@@ -71,66 +90,67 @@
                 Read the Docs
               </a>
             </li> -->
-            <li>
-              <a href="https://github.com/jrzerr/scorebook/">
-                <i class="fa fa-github-alt"></i>
-                Github
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/jrzerr/scorebook/issues">
-                <i class="fa fa-comments"></i>
-                Support
-              </a>
-            </li>
-            <li ui-sref-active="active" ng-hide="auth.user">
-              <a href ui-sref="logIn">
-                <i class="fa fa-user"></i>
-                Log In
-              </a>
-            </li>
-<!--             <li ng-show="auth.user">
+                    <li>
+                        <a href="https://github.com/jrzerr/scorebook/">
+                            <i class="fa fa-github-alt"></i>
+                            Github
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/jrzerr/scorebook/issues">
+                            <i class="fa fa-comments"></i>
+                            Support
+                        </a>
+                    </li>
+                    <li ui-sref-active="active" ng-hide="auth.user">
+                        <a href ui-sref="logIn">
+                            <i class="fa fa-sign-in"></i>
+                            Log In
+                        </a>
+                    </li>
+                    <!--             <li ng-show="auth.user">
               <a href ui-sref="logIn">
                 <i class="fa fa-rocket"></i>
                 {{type}}
               </a>
             </li> -->
-            <li ng-show="auth.user">
-              <a href ui-sref="logIn" ng-click="logOut()">
-                <i class="fa fa-user"></i>
-                Log Out
-              </a>
-            </li>
-          </ul>
+                    <li ng-show="auth.user">
+                        <a href ui-sref="logIn" ng-click="logOut()">
+                            <i class="fa fa-sign-out"></i>
+                            Log Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="container" ui-view="main"></div>
 
     <footer class="footer">
-      <div class="container">
-        <div class="footer-inner">
-          <ul class="social">
-            <li><a target="_blank" href="https://www.linkedin.com/pub/andrew-chumich/68/13b/10"><i class="fa fa-linkedin-sign"></i></a></li>
-            <li><a target="_blank" href="https://github.com/andrewchumich"><i class="fa fa-github-sign"></i></a></li>
-          </ul>
-          
+        <div class="container">
+            <div class="footer-inner">
+                <ul class="social">
+                    <li><a target="_blank" href="https://www.linkedin.com/pub/andrew-chumich/68/13b/10"><i class="fa fa-linkedin-sign"></i></a>
+                    </li>
+                    <li><a target="_blank" href="https://github.com/andrewchumich"><i class="fa fa-github-sign"></i></a>
+                    </li>
+                </ul>
 
-          <p>
-            (c) 2014 <a href="http://andrewchumich.github.io">Andrew Chumich</a>
-            <br />
-            Timber Logger is based on:
-            <a href="http://github.com/ngbp/ngbp">ngBoilerplate</a>,
-            <a href="https://www.firebase.com/">Firebase</a>,
-            <a href="http://www.angularjs.org">AngularJS</a>,
-            <a href="http://getbootstrap.com">Bootstrap</a>, 
-            <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,
-            and 
-            <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>.        
-          </p>
+
+                <p>
+                    (c) 2014 <a href="http://andrewchumich.github.io">Andrew Chumich</a>
+                    <br />Timber Logger is based on:
+                    <a href="http://github.com/ngbp/ngbp">ngBoilerplate</a>,
+                    <a href="https://www.firebase.com/">Firebase</a>,
+                    <a href="http://www.angularjs.org">AngularJS</a>,
+                    <a href="http://getbootstrap.com">Bootstrap</a>,
+                    <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>, and
+                    <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>.
+                </p>
+            </div>
         </div>
-      </div>
     </footer>
-  </body>
+</body>
+
 </html>

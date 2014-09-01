@@ -11,5 +11,8 @@
     "angularfire": "~0.8.0",
     "firebase-simple-login": "~1.6.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "resolutions": {
+    "angular-bootstrap": "~0.11.0"
+  }
 }

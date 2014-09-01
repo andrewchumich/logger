@@ -1,11 +1,17 @@
-DATE: {{formData.metrics[metric] | date:'fullDate'}}
+<b>{{formData.metrics[metric] | date:'fullDate'}}</b>
 <div ng-init="picker = false">
-	<div ng-hide="picker">
-		<br><button type="button" ng-click="setDateValue(metric, 'TODAY')" class="btn btn-primary btn-lg btn-block">Today</button><br>
-		<button type="button" ng-click="setDateValue(metric, 'YESTERDAY')" class="btn btn-primary btn-lg btn-block">Yesterday</button><br>
-		<button ng-click="picker = true" type="button" class="btn btn-primary btn-lg btn-block">Pick Date</button>
-	</div>
-	<div ng-show="picker">
-		<input type='date' class='form-control' ac-bind-model="metric" ac-parent='formData.metrics'>
-	</div>
+    <div ng-hide="picker">
+        <br>
+        <button type="button" ng-click="setDateValue(metric, 'TODAY')" class="btn btn-primary btn-lg btn-block">Today</button>
+        <br>
+        <button type="button" ng-click="setDateValue(metric, 'YESTERDAY')" class="btn btn-primary btn-lg btn-block">Yesterday</button>
+        <br>
+        <button ng-click="picker = true" type="button" class="btn btn-primary btn-lg btn-block">Pick Date</button>
+    </div>
+    <div ng-show="picker">
+        <input type='date' class='form-control' ac-bind-model="metric" ac-parent='formData.metrics'>
+<!--         <div style="display:inline-block; min-height:290px;">
+            <datepicker ng-model="dt" ac-bind-model="metric" ac-parent='formData.metrics' min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+        </div> -->
+    </div>
 </div>

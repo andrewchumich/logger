@@ -29,11 +29,16 @@ angular.module( 'ngBoilerplate.logEntry', [
   //progress: is the form complete and has it been successfully added to firebase?
   $scope.progress = false;
   $scope.addFormData = function (data) {
-    $scope.entries[data.metrics.date+"-"+Date.now().toString()] = data;
-    $scope.entries.$save().then(function (ref) {
-      $scope.progress = true;
-      $location.path('/logView/'+$scope.type);
-    });
+    if(data.metrics.date !== undefined  && data.metrics.date != null) {
+      $scope.entries[data.metrics.date+"-"+Date.now().toString()] = data;
+      $scope.entries.$save().then(function (ref) {
+        $scope.progress = true;
+        $location.path('/logView/'+$scope.type);
+      });
+    }
+    else {
+      $scope.error = "You must enter a date!";
+    }
   };
   $scope.setEnumValue = function (metric, value) {
     $scope.formData.metrics[metric] = value;

@@ -2,7 +2,7 @@
     <form ng-submit='addFormData(formData)'>
         <div ng-repeat='page in logTemplate.pages'>
             <div ng-repeat='metric in page.metrics'>
-                {{logTemplate.metrics[metric].text}}
+                {{logTemplate.metrics[metric].text}}:
                 <!-- 
                     I feel like this could be done more elegantly
                     but I am not sure what that would look like...
@@ -32,10 +32,12 @@
                 </div>
 
             </div>
-                
+
             <br>
             <br>
         </div>
-        <input type="submit" id="submit"  class="btn btn-default" value="Submit" />
+        <p ng-show="error" class="text-danger">{{ error }}</p>
+
+        <input type="submit" id="submit" class="btn btn-default" value="Submit" />
     </form>
 </div>

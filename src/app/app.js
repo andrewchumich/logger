@@ -52,6 +52,7 @@ angular.module( 'ngBoilerplate', [
     password: data.password,
     rememberMe: data.rememberMe
     }).then(function(user) {
+      $scope.error = "";
       $scope.userSetup(user);
       $location.path('/logHome/'+$scope.type);
        console.log("Logged in as: ", user.uid);
