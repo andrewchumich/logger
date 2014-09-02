@@ -7,7 +7,7 @@
 - Use [Firebase](https://www.firebase.com/) to simplify back end
 - Use [Bootstrap](https://github.com/twbs/bootstrap) to simplify CSS and make the application mobile-friendly
 
-Based off of:
+Based on:
 # [ngBoilerplate](http://joshdmiller.github.com/ng-boilerplate) [![Build Status](https://api.travis-ci.org/ngbp/ngbp.png?branch=v0.3.2-release)](https://travis-ci.org/ngbp/ngbp)
 
 
