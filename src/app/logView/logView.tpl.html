@@ -23,7 +23,6 @@
             </tr>
             <tr ng-repeat="(name, entry) in filterDates(log.entries, beginningOfWeek)" ng-class='runTypeTableClass(entry.metrics.runType)' ng-click="setCurrent(name, entry)">
                 <td>
-                    {{entry}}
                     {{entry.metrics.date | date : 'mediumDate'}}
                 </td>
                 <td>

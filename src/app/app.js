@@ -8,6 +8,7 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.logEntry',
   'ngBoilerplate.logHome',
   'ngBoilerplate.logIn',
+  'ngBoilerplate.logRegister',
   'firebase',
   'ui.router'
 ])
@@ -67,6 +68,8 @@ angular.module( 'ngBoilerplate', [
     $scope.auth.$logout();
     $scope.loaded = false;
   };
+
+  
 
   $scope.firebase = {};
   $scope.firebase.logs = $firebase(new Firebase('https://runninglog.firebaseio.com/logs')).$asObject();
