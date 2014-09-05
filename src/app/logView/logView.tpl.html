@@ -1,6 +1,7 @@
 <div class="row">
 <!--     ENTRY: {{current.entry}}
     NAME: {{current.name}} -->
+    {{ log.$id }}
     <div class="container">
         <h1>Week of:
             <br>{{ getDayOfWeek() }}, {{ beginningOfWeek | date:'longDate' }}:</h1>
@@ -22,6 +23,7 @@
             </tr>
             <tr ng-repeat="(name, entry) in filterDates(log.entries, beginningOfWeek)" ng-class='runTypeTableClass(entry.metrics.runType)' ng-click="setCurrent(name, entry)">
                 <td>
+                    {{entry}}
                     {{entry.metrics.date | date : 'mediumDate'}}
                 </td>
                 <td>

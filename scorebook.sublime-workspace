@@ -260,34 +260,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/app/logEntry/LogDirectives/numberInput.tpl.html",
+			"file": "src/app/logView/logView.js",
 			"settings":
 			{
-				"buffer_size": 1079,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/logEntry/logEntry.js",
-			"settings":
-			{
-				"buffer_size": 3514,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/logEntry/logEntry.tpl.html",
-			"settings":
-			{
-				"buffer_size": 1589,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/logEntry/LogDirectives/dateInput.tpl.html",
-			"settings":
-			{
-				"buffer_size": 933,
+				"buffer_size": 4392,
 				"line_ending": "Windows"
 			}
 		},
@@ -295,31 +271,7 @@
 			"file": "src/app/logView/logView.tpl.html",
 			"settings":
 			{
-				"buffer_size": 2205,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "bower.json",
-			"settings":
-			{
-				"buffer_size": 403,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/app.js",
-			"settings":
-			{
-				"buffer_size": 2822,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/home/home.tpl.html",
-			"settings":
-			{
-				"buffer_size": 54,
+				"buffer_size": 2253,
 				"line_ending": "Windows"
 			}
 		},
@@ -327,7 +279,18 @@
 			"file": "src/index.html",
 			"settings":
 			{
-				"buffer_size": 6814,
+				"buffer_size": 6833,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "# [ngBoilerplate](http://joshdmiller.github.com/ng-boilerplate) [![Build Status](https://api.travis-ci.org/ngbp/ngbp.png?branch=v0.3.2-release)](https://travis-ci.org/ngbp/ngbp)\n\nAn opinionated kickstarter for [AngularJS](http://angularjs.org) projects.\n\n***\n\n## Quick Start\n\nInstall Node.js and then:\n\n```sh\n$ git clone git://github.com/joshdmiller/ng-boilerplate\n$ cd ng-boilerplate\n$ sudo npm -g install grunt-cli karma bower\n$ npm install\n$ bower install\n$ grunt watch\n```\n\nFinally, open `file:///path/to/ng-boilerplate/build/index.html` in your browser.\n\nHappy hacking!\n\n## Purpose\n\n`ngBoilerplate` is designed to make life easy by providing a basic framework\nwith which to kickstart AngularJS projects. It contains a best-practice\ndirectory structure to ensure code reusability and maximum scalability.\nngBoilerplate also comes prepackaged with the most popular design frameworks\naround: [Twitter Bootstrap](http://getbootstrap.com),\n[Angular UI](http://angular-ui.github.io),\n[Angular Bootstrap](http://angular-ui.github.io/bootstrap),\n[Font Awesome](http://fortawesome.github.com/Font-Awesome), and\n[LESS](http://lesscss.org). Lastly, it contains a sophisticated\n[Grunt](http://gruntjs.org)-based build system to ensure maximum productivity.\nAll you have to do is clone it and start coding!\n\n## Philosophy\n\nThe principal goal of `ngBoilerplate` is to set projects up for long-term\nsuccess.  So `ngBoilerplate` tries to follow best practices everywhere it can.\nThese are:\n\n- Properly orchestrated modules to encourage drag-and-drop component re-use.\n- Tests exist alongside the component they are testing with no separate `test`\n  directory required; the build process should be sophisticated enough to handle\n  this.\n- Speaking of which, the build system should work automagically, without\n  involvement from the developer. It should do what needs to be done, while\n  staying out of the way. Components should end up tested, linted, compiled,\n  and minified, ready for use in a production environment.\n- Integration with popular tools like Bower, Karma, and LESS.\n- *Encourages* test-driven development. It's the only way to code.\n- A directory structure that is cogent, meaningful to new team members, and\n  supporting of the above points.\n- Well-documented, to show new developers *why* things are set up the way they\n  are.\n- It should be responsive to evidence. Community feedback is therefore crucial\n  to the success of `ngBoilerplate`.\n\nBut `ngBoilerplate` is not an example of an AngularJS app: this is a\nkickstarter. If you're looking for an example of what a complete, non-trivial\nAngularJS app that does something real looks like, complete with a REST backend\nand authentication and authorization, then take a look at\n[`angular-app`](http://github.com/angular-app/angular-app), which does just\nthat - and does it well.\n\n## Learn\n\n### Overall Directory Structure\n\nAt a high level, the structure looks roughly like this:\n\n```\nng-boilerplate/\n  |- grunt-tasks/\n  |- karma/\n  |- src/\n  |  |- app/\n  |  |  |- <app logic>\n  |  |- assets/\n  |  |  |- <static files>\n  |  |- common/\n  |  |  |- <reusable code>\n  |  |- less/\n  |  |  |- main.less\n  |- vendor/\n  |  |- angular-bootstrap/\n  |  |- bootstrap/\n  |  |- placeholders/\n  |- .bowerrc\n  |- bower.json\n  |- build.config.js\n  |- Gruntfile.js\n  |- module.prefix\n  |- module.suffix\n  |- package.json\n```\n\nWhat follows is a brief description of each entry, but most directories contain\ntheir own `README.md` file with additional documentation, so browse around to\nlearn more.\n\n- `karma/` - test configuration.\n- `src/` - our application sources. [Read more &raquo;](src/README.md)\n- `vendor/` - third-party libraries. [Bower](http://bower.io) will install\n  packages here. Anything added to this directory will need to be manually added\n  to `build.config.js` and `karma/karma-unit.js` to be picked up by the build\n  system.\n- `.bowerrc` - the Bower configuration file. This tells Bower to install\n  components into the `vendor/` directory.\n- `bower.json` - this is our project configuration for Bower and it contains the\n  list of Bower dependencies we need.\n- `build.config.js` - our customizable build settings; see \"The Build System\"\n  below.\n- `Gruntfile.js` - our build script; see \"The Build System\" below.\n- `module.prefix` and `module.suffix` - our compiled application script is\n  wrapped in these, which by default are used to place the application inside a\n  self-executing anonymous function to ensure no clashes with other libraries.\n- `package.json` - metadata about the app, used by NPM and our build script. Our\n  NPM dependencies are listed here.\n\n### Detailed Installation\n\n\nThis section provides a little more detailed understanding of what goes into\ngetting `ngBoilerplate` up and running. Though `ngBoilerplate` is really simple\nto use, it might help to have an understanding of the tools involved here, like\nNode.js and Grunt and Bower. If you're completely new to highly organized,\nmodern JavaScript development, take a few short minutes to read [this overview\nof the tools](tools.md) before continuing with this section.\n\nOkay, ready to go? Here it is:\n\n`ngBoilerplate` uses [Grunt](http://gruntjs.org) as its build system, so\n[Node.js](http://nodejs.org) is required. Also, Grunt by default no longer comes\nwith a command-line utility and Karma and Bower must end up in your global path\nfor the build system to find it, so they must be installed independently. Once\nyou have Node.js installed, you can simply use `npm` to make it all happen:\n\n```sh\n$ npm -g install grunt-cli karma bower\n```\n\nIf you're on Linux (like I am) then throw `sudo` in front of that command.  If\nyou're on Windows, then you're on your own.\n\nNext, you can either clone this repository using Git, download it as a zip file\nfrom GitHub, or merge the branch into your existing repository. Assuming you're\nstarting from scratch, simply clone this repository using git:\n\n```sh\n$ git clone git://github.com/joshdmiller/ng-boilerplate my-project-name\n$ cd my-project-name\n```\n\nAnd then install the remaining build dependencies locally:\n\n```sh\n$ npm install\n```\n\nThis will read the `dependencies` (empty by default) and the `devDependencies`\n(which contains our build requirements) from `package.json` and install\neverything needed into a folder called `node_modules/`.\n\nThere are many Bower packages used by `ngBoilerplate`, like Twitter Bootstrap\nand Angular UI, which are listed in `bower.js`. To install them into the\n`vendor/` directory, simply run:\n\n```sh\n$ bower install\n```\n\nIn the future, should you want to add a new Bower package to your app, run the\n`install` command:\n\n```sh\n$ bower install packagename --save-dev\n```\n\nThe `--save-dev` flag tells Bower to add the package at its current version to\nour project's `bower.js` file so should another developer download our\napplication (or we download it from a different computer), we can simply run the\n`bower install` command as above and all our dependencies will be installed for\nus. Neat!\n\nTechnically, `ngBoilerplate` is now ready to go.\n\nHowever, prior to hacking on your application, you will want to modify the\n`package.json` file to contain your project's information. Do not remove any\nitems from the `devDependencies` array as all are needed for the build process\nto work.\n\nTo ensure your setup works, launch grunt:\n\n```sh\n$ grunt watch\n```\n\nThe built files are placed in the `build/` directory by default. Open the\n`build/index.html` file in your browser and check it out! Because everything is\ncompiled, no XHR requests are needed to retrieve templates, so until this needs\nto communicate with your backend there is no need to run it from a web server.\n\n`watch` is actually an alias of the `grunt-contrib-watch` that will first run a\npartial build before watching for file changes. With this setup, any file that\nchanges will trigger only those build tasks necessary to bring the app up to\ndate. For example, when a template file changes, the templates are recompiled\nand concatenated, but when a test/spec file changes, only the tests are run.\nThis allows the watch command to complete in a fraction of the time it would\nordinarily take.\n\nIn addition, if you're running a Live Reload plugin in your browser (see below),\nyou won't even have to refresh to see the changes! When the `watch` task detects\na file change, it will reload the page for you. Sweet.\n\nWhen you're ready to push your app into production, just run the `compile`\ncommand:\n\n```sh\n$ grunt compile\n```\n\nThis will concatenate and minify your sources and place them by default into the\n`bin/` directory. There will only be three files: `index.html`,\n`your-app-name.js`, and `your-app-name.css`. All of the vendor dependencies like\nBootstrap styles and AngularJS itself have been added to them for super-easy\ndeploying. If you use any assets (`src/assets/`) then they will be copied to\n`bin/` as is.\n\nLastly, a complete build is always available by simply running the default\ntask, which runs `build` and then `compile`:\n\n```sh\n$ grunt\n```\n\n### The Build System\n\nThe best way to learn about the build system is by familiarizing yourself with\nGrunt and then reading through the heavily documented build script,\n`Gruntfile.js`. But you don't need to do that to be very productive with\n`ngBoilerplate`. What follows in this section is a quick introduction to the\ntasks provided and should be plenty to get you started.\n\nThe driver of the process is the `delta` multi-task, which watches for file\nchanges using `grunt-contrib-watch` and executes one of nine tasks when a file\nchanges:\n\n* `delta:gruntfile` - When `Gruntfile.js` changes, this task runs the linter\n  (`jshint`) on that one file and reloads the configuration.\n* `delta:assets` - When any file within `src/assets/` changes, all asset files\n  are copied to `build/assets/`.\n* `delta:html` - When `src/index.html` changes, it is compiled as a Grunt\n  template, so script names, etc., are dynamically replaced with the correct\n  values configured dynamically by Grunt.\n* `delta:less` - When any `*.less` file within `src/` changes, the\n  `src/less/main.less` file is linted and copied into\n  `build/assets/ng-boilerplate.css`.\n* `delta:jssrc` - When any JavaScript file within `src/` that does not end in\n  `.spec.js` changes, all JavaScript sources are linted, all unit tests are run,\n  and the all source files are re-copied to `build/src`.\n* `delta:coffeesrc` - When any `*.coffee` file in `src/` that doesn't match\n  `*.spec.coffee` changes, the Coffee scripts are compiled independently into\n  `build/src` in a structure mirroring where they were in `src/` so it's easy to\n  locate problems. For example, the file\n  `src/common/titleService/titleService.coffee` is compiled to\n  `build/src/common/titleService/titleService.js`.\n* `delta:tpls` - When any `*.tpl.html` file within `src/` changes, all templates\n  are put into strings in a JavaScript file (technically two, one for\n  `src/common/` and another for `src/app/`) that will add the template to\n  AngularJS's\n  [`$templateCache`](http://docs.angularjs.org/api/ng.$templateCache) so\n  template files are part of the initial JavaScript payload and do not require\n  any future XHR.  The template cache files are `build/template-app.js` and\n  `build/template-common.js`.\n* `delta:jsunit` - When any `*.spec.js` file in `src/` changes, the test files\n  are linted and the unit tests are executed.\n* `delta:coffeeunit` - When any `*.spec.coffee` file in `src/` changes, the test\n  files are linted, compiled their tests executed.\n\nAs covered in the previous section, `grunt watch` will execute a full build\nup-front and then run any of the aforementioned `delta:*` tasks as needed to\nensure the fastest possible build. So whenever you're working on your project,\nstart with:\n\n```sh\n$ grunt watch\n```\n\nAnd everything will be done automatically!\n\n### Build vs. Compile\n\nTo make the build even faster, tasks are placed into two categories: build and\ncompile. The build tasks (like those we've been discussing) are the minimal\ntasks required to run your app during development.\n\nCompile tasks, however, get your app ready for production. The compile tasks\ninclude concatenation, minification, compression, etc. These tasks take a little\nbit longer to run and are not at all necessary for development so are not called\nautomatically during build or watch.\n\nTo initiate a full compile, you simply run the default task:\n\n```sh\n$ grunt\n```\n\nThis will perform a build and then a compile. The compiled site - ready for\nuploading to the server! - is located in `bin/`, taking a cue from\ntraditional software development. To test that your full site works as\nexpected, open the `bin/index.html` file in your browser. Voila!\n\n### Live Reload!\n\n`ngBoilerplate` also includes [Live Reload](http://livereload.com/), so you no\nlonger have to refresh your page after making changes! You need a Live Reload\nbrowser plugin for this:\n\n- Chrome - [Chrome Webstore](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)\n- Firefox - [Download from Live Reload](http://download.livereload.com/2.0.8/LiveReload-2.0.8.xpi)\n- Safari - [Download from Live Reload](http://download.livereload.com/2.0.9/LiveReload-2.0.9.safariextz)\n- Internet Explorer - Surely you jest.\n\nNote that if you're using the Chrome version with `file://` URLs (as is the\ndefault with `ngBoilerplate`) you need to tell Live Reload to allow it. Go to\n`Menu -> Tools -> Extensions` and check the \"Allow access to file URLs\" box next\nto the Live Reload plugin.\n\nWhen you load your page, click the Live Reload icon in your toolbar and\neverything should work magically. w00t!\n\nIf you'd prefer to not install a browser extension, then you must add the\nfollowing to the end of the `body` tag in `index.html`:\n\n```html\n<script src=\"http://localhost:35729/livereload.js\"></script>\n```\n\nBoom!\n\n## Roadmap\n\nThis is a project that is not broad in scope, so there's not really much of a\nwish list here. But I would like to see a couple of things:\n\nI'd like it to be a little simpler. I want this to be a universal starting\npoint. If someone is starting a new AngularJS project, she should be able to\nclone, merge, or download its source and immediately start doing what she needs\nwithout renaming a bunch of files and methods or deleting spare parts. What I\nhave works for a first release, but I just think there is a little too much here\nright now.\n\nI'd also like to see a simple generator. Nothing like Yeoman, as there already\nis one of those, but just something that allows the user to say \"I want\nBootstrap but not Font Awesome and my app is called 'coolApp'. Gimme.\" Perhaps a\ncustom download builder like UI Bootstrap has. Like that. Then again, perhaps\nsome Yeoman generators wouldn't be out of line. I don't know. What do you think?\n\nNaturally, I am open to all manner of ideas and suggestions. See the\n\"Contributing\" section below.\n\n### To Do\n\nSee the [issues list](http://github.com/joshdmiller/ng-boilerplate/issues). And\nfeel free to submit your own!\n\n### Contributing\n\nThis is an opinionated kickstarter, but the opinions are fluid and\nevidence-based. Don't like the way I did something? Think you know of a better\nway? Have an idea to make this more useful? Let me know! You can contact me\nthrough all the usual channels or you can open an issue on the GitHub page. If\nyou're feeling ambitious, you can even submit a pull request - how thoughtful\nof you!\n\nSo join the team! We're good people.\n\n",
+			"file": "README.md",
+			"file_size": 15855,
+			"file_write_time": 130481058740386348,
+			"settings":
+			{
+				"buffer_size": 15477,
 				"line_ending": "Windows"
 			}
 		}
@@ -368,24 +331,27 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logHome/logHome.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/index.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/home/home.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/bower.json",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/dateInput.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/numberInput.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/app.js",
 		"/C/Users/Andrew/SkyDrive/programming/webstuff/angular/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/double.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logIn/logIn.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logIn/logIn.tpl.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.js",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.tpl.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/index.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/bin/index.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/app.js",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/build.config.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/vendor/firebase/bower.json",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/build/vendor/angular/angular.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/build/vendor/firebase/firebase.js",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/bower.json",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/enumInput.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logHome/logHome.js",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logHome/logHome.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/README.md",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/textInput.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logIn/logIn.spec.js",
@@ -393,8 +359,6 @@
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logHome/logHome.spec.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.spec.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.spec.js",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/numberInput.tpl.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/dateInput.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/timeInput.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/textareaInput.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/textInput.tpl.html",
@@ -494,8 +458,7 @@
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/controllers/runs.js",
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/views/create.html",
 		"/C/Users/Andrew/SkyDrive/programming/webstuff/angular/index.html",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/system/views/header.html",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/views/edit.html"
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/public/system/views/header.html"
 	],
 	"find":
 	{
@@ -721,29 +684,29 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/app/logEntry/LogDirectives/numberInput.tpl.html",
+					"file": "src/app/logView/logView.js",
 					"settings":
 					{
-						"buffer_size": 1079,
+						"buffer_size": 4392,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								470,
-								470
+								1853,
+								1853
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -754,46 +717,46 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/app/logEntry/logEntry.js",
+					"file": "src/app/logView/logView.tpl.html",
 					"settings":
 					{
-						"buffer_size": 3514,
+						"buffer_size": 2253,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1159,
-								1095
+								1264,
+								1264
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 871.0,
+						"translation.y": 408.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "src/app/logEntry/logEntry.tpl.html",
+					"file": "src/index.html",
 					"settings":
 					{
-						"buffer_size": 1589,
+						"buffer_size": 6833,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1352,
-								1352
+								4621,
+								4621
 							]
 						],
 						"settings":
@@ -810,168 +773,28 @@
 				},
 				{
 					"buffer": 3,
-					"file": "src/app/logEntry/LogDirectives/dateInput.tpl.html",
+					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 933,
+						"buffer_size": 15477,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								5578,
+								5578
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 233.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/app/logView/logView.tpl.html",
-					"settings":
-					{
-						"buffer_size": 2205,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								536,
-								536
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "bower.json",
-					"settings":
-					{
-						"buffer_size": 403,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								403,
-								403
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/app/app.js",
-					"settings":
-					{
-						"buffer_size": 2822,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1991,
-								1991
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1617.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/app/home/home.tpl.html",
-					"settings":
-					{
-						"buffer_size": 54,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								54,
-								54
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "src/index.html",
-					"settings":
-					{
-						"buffer_size": 6814,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3796,
-								3796
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2363.0,
+						"translation.y": 1020.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
