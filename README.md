@@ -1,5 +1,6 @@
 # Running Logger
 ### by Andrew Chumich
+Currently hosted at: [timber.firebaseapp.com](https://timber.firebaseapp.com)
 
 #Goals
 - Create a quick and simple web application to easily log run data
