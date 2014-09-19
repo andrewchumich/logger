@@ -70,7 +70,11 @@ angular.module( 'ngBoilerplate', [
     $scope.loaded = false;
   };
 
-  
+  $scope.deleteEntry = function (entry) {
+    $scope.entriesArray.$remove(entry).then(function(ref) {
+        console.log("NAME OF REMOVED ENTRY: "+ref.name()); // true
+    });
+  };
 
   $scope.firebase = {};
   $scope.firebase.logs = $firebase(new Firebase('https://runninglog.firebaseio.com/logs')).$asObject();

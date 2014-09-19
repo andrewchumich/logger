@@ -12,32 +12,6 @@
 
         </div>
 
-        <table id="rangeTable" class='table table-hover'>
-            <tr>
-                <th><a href="">Date</th>
-                <th><a href="">Distance</a>
-                </th>
-                <th><a href="">Time of Day</a>
-                </th>
-            </tr>
-            <tr ng-repeat="entry in filterDates(log.entries, beginningOfWeek)" ng-class='runTypeTableClass(entry.metrics.runType)' ng-click="setCurrent(entry)">
-                <td>
-                    {{entry.metrics.date | date : 'mediumDate'}}
-                </td>
-                <td>
-                    {{ entry.metrics.distance }}
-                </td>
-                <td>
-                    {{ entry.metrics.timeOfDay }}
-                </td>
-
-            </tr>
-            <tr>
-                <td>Total</td>
-                <td>{{rangeDistance}}</td>
-                <td></td>
-            </tr>
-        </table>
         <input ng-model="ind" type="number">{{entriesArray.$keyAt(ind)}}
         <table id="rangeTable" class='table table-hover'>
             <tr>
@@ -66,10 +40,12 @@
             </tr>
         </table>
 
-        <div class="container well" ng-show="current">
+        <div class="container well" ng-show="current.entry">
             <div ng-repeat="(metric, value) in current.entry.metrics">
                 {{firebase.logs[type].metrics[metric].text}}: {{value}}
             </div>
+            <br>
+            <button type="button" class="btn btn-danger" ng-click="deleteEntry(current.entry)">Delete</button>
             <br>
         </div>
         <div>

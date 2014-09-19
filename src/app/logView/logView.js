@@ -138,24 +138,19 @@ angular.module( 'ngBoilerplate.logView', [
   };
 
   $scope.showDate = function (entry) {
-    console.log("beginningOfWeek: " + $scope.beginningOfWeek);
-          var today = $scope.beginningOfWeek.getTime() - 24*60*60*1000;
-          var seven_days_ahead = today + (7)*24*60*60*1000;
-          var date = [entry.metrics.date.substring(0,4),entry.metrics.date.substring(5,7),entry.metrics.date.substring(8,10)];
-          var entry_date = new Date(date[0], date[1]-1, date[2]).getTime();
-          
-          if (seven_days_ahead >= entry_date && today < entry_date) {
-            return true;
-          }
+    var today = $scope.beginningOfWeek.getTime() - 24*60*60*1000;
+    var seven_days_ahead = today + (7)*24*60*60*1000;
+    var date = [entry.metrics.date.substring(0,4),entry.metrics.date.substring(5,7),entry.metrics.date.substring(8,10)];
+    var entry_date = new Date(date[0], date[1]-1, date[2]).getTime();
+    
+    if (seven_days_ahead >= entry_date && today < entry_date) {
+      return true;
+    }
         
     return false;
   };
 
-  $scope.dropdownDemoItems = [
-    "The first choice!",
-    "And another choice for you.",
-    "but wait! A third!"
-  ];
+
 })
 
 ;
