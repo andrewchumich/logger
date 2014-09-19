@@ -43,11 +43,12 @@ angular.module( 'ngBoilerplate.logView', [
 })
 
 .controller( 'LogViewCtrl', function LogViewCtrl( $scope, $firebase, $stateParams, dateFilterFilter ) {
-  // This is simple a demo for UI Boostrap.
+
   $scope.type = $stateParams.type;
   $scope.current = {};
 /*  $scope.log = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type));
-*/  $scope.beginningOfWeek = new Date();
+*/  
+  $scope.beginningOfWeek = new Date();
   /*
     weeks start on Mondays (this will be variable eventually), so the default page, if it is
     currently a Sunday, should be the previous Monday
@@ -118,9 +119,8 @@ angular.module( 'ngBoilerplate.logView', [
         return "";
     }
   };
-  $scope.setCurrent = function (name, entry) {
- 
-    $scope.current.name = name;
+  $scope.setCurrent = function (entry) {
+
     $scope.current.entry = entry;
   };
 
@@ -136,6 +136,21 @@ angular.module( 'ngBoilerplate.logView', [
     }
     return $scope.filteredDates;
   };
+
+  $scope.showDate = function (entry) {
+    console.log("beginningOfWeek: " + $scope.beginningOfWeek);
+          var today = $scope.beginningOfWeek.getTime() - 24*60*60*1000;
+          var seven_days_ahead = today + (7)*24*60*60*1000;
+          var date = [entry.metrics.date.substring(0,4),entry.metrics.date.substring(5,7),entry.metrics.date.substring(8,10)];
+          var entry_date = new Date(date[0], date[1]-1, date[2]).getTime();
+          
+          if (seven_days_ahead >= entry_date && today < entry_date) {
+            return true;
+          }
+        
+    return false;
+  };
+
   $scope.dropdownDemoItems = [
     "The first choice!",
     "And another choice for you.",
