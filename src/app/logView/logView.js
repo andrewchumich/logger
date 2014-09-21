@@ -43,11 +43,10 @@ angular.module( 'ngBoilerplate.logView', [
 })
 
 .controller( 'LogViewCtrl', function LogViewCtrl( $scope, $firebase, $stateParams, dateFilterFilter ) {
-
+  //Initialize variables
   $scope.type = $stateParams.type;
   $scope.current = {};
-/*  $scope.log = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type));
-*/  
+
   $scope.beginningOfWeek = new Date();
   /*
     weeks start on Mondays (this will be variable eventually), so the default page, if it is
@@ -59,12 +58,15 @@ angular.module( 'ngBoilerplate.logView', [
   else {
     $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate() - 6);
   }
+
+  //Define Functions
   $scope.changeDay = function(number) {
     //reset range distance whenever range is changed
     //not a great solution, but it works
     $scope.rangeDistance = 0;
     $scope.usedIndexes = [];
     $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate() + number);
+    $scope.distanceAdder();
   };
   $scope.setDate = function(date) {
     $scope.rangeDistance = 0;
@@ -74,6 +76,7 @@ angular.module( 'ngBoilerplate.logView', [
       $scope.beginningOfWeek = new Date(date);
       $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate());
     }
+    $scope.distanceAdder();
   };
   $scope.getDayOfWeek = function() {
     switch($scope.beginningOfWeek.getDay()) {
@@ -93,15 +96,6 @@ angular.module( 'ngBoilerplate.logView', [
         return 'Saturday';
       default:
         return 'ERROR: DAY NOT FOUND';
-    }
-  };
-  $scope.rangeDistance = 0;
-  $scope.usedIndexes = [];
-  //I do not particularly like this implementation...
-  $scope.distanceAdder = function (distance, name) {
-    if(distance !== undefined && $scope.usedIndexes.indexOf(Number(name)) === -1){
-      $scope.usedIndexes.push(name);
-      $scope.rangeDistance += Number(distance);
     }
   };
 
@@ -124,18 +118,16 @@ angular.module( 'ngBoilerplate.logView', [
     $scope.current.entry = entry;
   };
 
-  $scope.removeCurrent = function () {
-    $scope.auth.$remove($scope.current.name);
-  };
-  $scope.rangeDistance = 0;
-  $scope.filterDates = function (dates, firstDay) {
-    $scope.filteredDates = dateFilterFilter(dates, firstDay);
+  $scope.distanceAdder = function () {
     $scope.rangeDistance = 0;
-    for(var i = 0; i < $scope.filteredDates.length; i++){
-      $scope.rangeDistance += $scope.filteredDates[i].metrics.distance;
+    for (var i = 0; i < $scope.entriesArray.length; i++) {
+      if($scope.showDate($scope.entriesArray[i])) {
+        console.log("DISTANCE TO ADD : "+ $scope.entriesArray[i].metrics.distance);
+        $scope.rangeDistance += $scope.entriesArray[i].metrics.distance;
+      }
     }
-    return $scope.filteredDates;
   };
+
 
   $scope.showDate = function (entry) {
     var today = $scope.beginningOfWeek.getTime() - 24*60*60*1000;
