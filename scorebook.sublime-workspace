@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"entrie",
+				"entriesArray"
+			],
+			[
+				"dist",
+				"distanceAdder"
+			],
+			[
+				"dis",
+				"distanceAdder"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"entr",
+				"entries"
+			],
+			[
+				"entry",
+				"entry"
+			],
+			[
 				"user",
 				"userLogRef"
 			],
@@ -267,7 +291,7 @@
 			"file": "src/app/logView/logView.js",
 			"settings":
 			{
-				"buffer_size": 4392,
+				"buffer_size": 4206,
 				"line_ending": "Windows"
 			}
 		},
@@ -275,7 +299,15 @@
 			"file": "src/app/logView/logView.tpl.html",
 			"settings":
 			{
-				"buffer_size": 2025,
+				"buffer_size": 2265,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/app/app.js",
+			"settings":
+			{
+				"buffer_size": 3040,
 				"line_ending": "Windows"
 			}
 		},
@@ -284,38 +316,6 @@
 			"settings":
 			{
 				"buffer_size": 7104,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/app.js",
-			"settings":
-			{
-				"buffer_size": 2857,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/logRegister/logRegister.js",
-			"settings":
-			{
-				"buffer_size": 1717,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/logRegister/logRegister.tpl.html",
-			"settings":
-			{
-				"buffer_size": 965,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/logIn/logIn.tpl.html",
-			"settings":
-			{
-				"buffer_size": 749,
 				"line_ending": "Windows"
 			}
 		}
@@ -356,10 +356,14 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/app.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logIn/logIn.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logRegister/logRegister.tpl.html",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logRegister/logRegister.js",
+		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/index.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logRegister/logRegister.spec.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/README.md",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logHome/logHome.tpl.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/index.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/home/home.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/bower.json",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.tpl.html",
@@ -367,10 +371,8 @@
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/logEntry.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logEntry/LogDirectives/numberInput.tpl.html",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/app.js",
 		"/C/Users/Andrew/SkyDrive/programming/webstuff/angular/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/double.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logIn/logIn.js",
-		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logIn/logIn.tpl.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/bin/index.html",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/logView/logView.js",
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/build.config.js",
@@ -481,9 +483,7 @@
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/server/routes/users.js",
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/server/views/users/signup.html",
 		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/views/list.html",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/controllers/runs.js",
-		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/public/views/create.html",
-		"/C/Users/Andrew/SkyDrive/programming/webstuff/angular/index.html"
+		"/C/Users/Andrew/Documents/My Web Sites/myApp/packages/runs/server/controllers/runs.js"
 	],
 	"find":
 	{
@@ -550,6 +550,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"distanceAdder",
+			"filterDates",
+			"removeCurrent",
+			"aut",
+			"entry",
 			"LogIn",
 			"logIn",
 			"default",
@@ -672,12 +677,7 @@
 			"loggers",
 			"Notes",
 			"notes",
-			"distance",
-			"notes",
-			"distance",
-			"Loggers",
-			"distance",
-			"id"
+			"distance"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -709,7 +709,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -717,15 +717,15 @@
 					"file": "src/app/logView/logView.js",
 					"settings":
 					{
-						"buffer_size": 4392,
+						"buffer_size": 4206,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1853,
-								1853
+								3720,
+								3720
 							]
 						],
 						"settings":
@@ -735,7 +735,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3490.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -745,15 +745,15 @@
 					"file": "src/app/logView/logView.tpl.html",
 					"settings":
 					{
-						"buffer_size": 2025,
+						"buffer_size": 2265,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1638,
-								1638
+								487,
+								487
 							]
 						],
 						"settings":
@@ -763,13 +763,41 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1326.0,
+						"translation.y": 1142.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"file": "src/app/app.js",
+					"settings":
+					{
+						"buffer_size": 3040,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2001,
+								2001
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1336.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "src/index.html",
 					"settings":
 					{
@@ -780,8 +808,8 @@
 						"selection":
 						[
 							[
-								4953,
-								4953
+								0,
+								0
 							]
 						],
 						"settings":
@@ -791,117 +819,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3774.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/app/app.js",
-					"settings":
-					{
-						"buffer_size": 2857,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1402,
-								1433
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 408.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/app/logRegister/logRegister.js",
-					"settings":
-					{
-						"buffer_size": 1717,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								495,
-								495
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 612.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/app/logRegister/logRegister.tpl.html",
-					"settings":
-					{
-						"buffer_size": 965,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								279,
-								279
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/app/logIn/logIn.tpl.html",
-					"settings":
-					{
-						"buffer_size": 749,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								489,
-								489
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3322.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -950,6 +868,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"app.js",
+				"scorebook/src/app/app.js"
+			],
 			[
 				"server",
 				"angular/server.js"

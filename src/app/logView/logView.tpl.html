@@ -5,14 +5,13 @@
         <h1>Week of:
             <br>{{ getDayOfWeek() }}, {{ beginningOfWeek | date:'longDate' }}:</h1>
         <div>
-            <button class="btn btn-success btn-lg" ng-click='changeDay(-7)'>Previous Week</button>
-            <button class="btn btn-primary btn-lg" ng-click='changeDay(7)'>Following Week</button>
+            <button class="btn btn-success btn-lg" ng-click='changeDay(-7)' ng-disabled="!entriesArray">Previous Week</button>
+            <button class="btn btn-primary btn-lg" ng-click='changeDay(7)' ng-disabled="!entriesArray">Following Week</button>
             <br>
             <br>
 
         </div>
 
-        <input ng-model="ind" type="number">{{entriesArray.$keyAt(ind)}}
         <table id="rangeTable" class='table table-hover'>
             <tr>
                 <th><a href="">Date</th>
@@ -21,7 +20,7 @@
                 <th><a href="">Time of Day</a>
                 </th>
             </tr>
-            <tr ng-repeat="entry in entriesArray" ng-class='runTypeTableClass(entry.metrics.runType)' ng-click="setCurrent(entry)" ng-show="showDate(entry)">
+            <tr ng-repeat="entry in filterDates(entriesArray, beginningOfWeek)" ng-class='runTypeTableClass(entry.metrics.runType)' ng-click="setCurrent(entry)">
                 <td>
                     {{entry.metrics.date | date : 'mediumDate'}}
                 </td>
