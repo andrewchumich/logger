@@ -37,7 +37,6 @@ angular.module( 'ngBoilerplate', [
     $scope.firebase.users = {};
     $scope.firebase.users[user.uid.toString()] = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+user.uid.toString())).$asObject();
     $scope.firebase.users[user.uid.toString()].$loaded().then(function () {
-    console.log("TOTES LOADED");
     $scope.type = $scope.firebase.users[user.uid].defaultLog;
     $scope.log = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type)).$asObject();
     $scope.entriesArray = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type+'/entries')).$asArray();
