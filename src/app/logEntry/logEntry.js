@@ -71,19 +71,31 @@ angular.module( 'ngBoilerplate.logEntry', [
         restrict: 'E',
         scope: {
             acName: '@',
-            acType: '@',
-            acModel: '='
+            acTemplate: '=',
+            acModel: '=',
+            acIncrement: '&'
         },
         link: function(scope, element, attrs) {
             // decode acType down into the proper sub-directive
             var template = null;
-            console.log(element.html);
-            switch (scope.acType) {
-                case "number":
-                    template = "<ac-number ac-name=\"acName\" ac-model=\"acModel\" ac-increment=\"acIncrement()\"></ac-number>";
-                    break;
+            switch (scope.acTemplate.metrics[scope.acName].type) {
                 case "text":
                     template = "<ac-text ac-name=\"acName\" ac-model=\"acModel\"></ac-text>";
+                    break;
+                case "textarea":
+                    template = "<ac-textarea ac-name=\"acName\" ac-model=\"acModel\"></ac-textarea>";
+                    break;
+                case "date":
+                    template = "<ac-date ac-name=\"acName\" ac-model=\"acModel\"></ac-date>";
+                    break;
+                case "time":
+                    template = "<ac-time ac-name=\"acName\" ac-model=\"acModel\"></ac-time>";
+                    break;
+                case "number":
+                    template = "<ac-number ac-name=\"acName\" ac-model=\"acModel\"></ac-number>";
+                    break;
+                case "enum":
+                    template = "<ac-enum ac-name=\"acName\" ac-model=\"acModel\"></ac-enum>";
                     break;
                 default:
                     throw "acDynamicInput type not supported:" + scope.acType;
@@ -133,11 +145,6 @@ angular.module( 'ngBoilerplate.logEntry', [
 .directive('acNumber', function() {
   return {
     restrict: 'E',
-    scope: {
-      acName: '=',
-      acModel: '=',
-      acIncrement: '&'
-    },
     templateUrl: 'logEntry/LogDirectives/numberInput.tpl.html'
   };
 })

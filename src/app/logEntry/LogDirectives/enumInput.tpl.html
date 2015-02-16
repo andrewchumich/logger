@@ -1,6 +1,10 @@
-<b>{{formData.metrics[metric]}}</b>
 <br>
-<div ng-repeat='value in logTemplate.metrics[metric].values'>
-	<button ng-show="value" type="button" ng-click="setEnumValue(metric, value)" class="btn btn-primary btn-lg btn-block">{{ value }}</button>
+<div ng-show="value" ng-repeat='value in acTemplate.metrics[acName].values'>
+	<!--
+	$parent is required because ng-repeat will shadow the
+	acModel variable because it is a primitive. Read:
+	 https://github.com/angular/angular.js/wiki/Understanding-Scopes#ng-repeat
+	-->
+	<button type="button" ng-click="$parent.acModel = value" class="btn btn-primary btn-lg btn-block">{{ value }}</button>
 	<br>
 </div>
