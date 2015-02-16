@@ -44,7 +44,7 @@ angular.module( 'ngBoilerplate.logEntry', [
     $scope.formData.metrics[metric] = value;
   };
   $scope.setDateValue = function (metric, value) {
-    var date = new Date(); 
+    var date = new Date();
     if(value === 'YESTERDAY'){
       date.setDate(date.getDate() - 1);
     }
@@ -53,30 +53,58 @@ angular.module( 'ngBoilerplate.logEntry', [
   };
 
   $scope.incrementNumberInput = function (name, difference) {
+    console.log(name);
     if($scope.formData.metrics[name] + difference < 0){
       return;
     }
     if($scope.formData.metrics[name] == null || $scope.formData.metrics[name] === undefined) {
       $scope.formData.metrics[name] = Number(difference);
     }
-    else { 
+    else {
       $scope.formData.metrics[name] += Number(difference);
     }
   };
 })
-//Directive found at:http://stackoverflow.com/questions/15964278/angularjs-bind-ng-model-to-a-variable-which-name-is-stored-inside-another-vari
-//allows ng-model to be set by a variable in ng-repeat
-.directive('acBindModel',function($compile){
-      return {
-        link:function(scope,element,attr){
-          element[0].removeAttribute('ac-bind-model');
-          element[0].removeAttribute('ac-parent');
-          element[0].setAttribute('ng-model',attr.acParent+"."+scope.$eval(attr.acBindModel));
-          console.log("ELEMENT[0]: "+element[0]);
-          $compile(element[0])(scope);
+
+.directive('acDynamicInput', function($log, $compile) {
+    return {
+        restrict: 'E',
+        scope: {
+            acName: '@',
+            acType: '@',
+            acModel: '='
+        },
+        link: function(scope, element, attrs) {
+            // decode acType down into the proper sub-directive
+            var template = null;
+            console.log(element.html);
+            switch (scope.acType) {
+                case "number":
+                    template = "<ac-number ac-name=\"acName\" ac-model=\"acModel\" ac-increment=\"acIncrement()\"></ac-number>";
+                    break;
+                case "text":
+                    template = "<ac-text ac-name=\"acName\" ac-model=\"acModel\"></ac-text>";
+                    break;
+                default:
+                    throw "acDynamicInput type not supported:" + scope.acType;
+            }
+            element.html(template);
+            $compile(element.contents())(scope);
         }
-      };
-    })
+    };
+})
+
+// .directive('acBindModel',function($compile){
+//       return {
+//         link:function(scope,element,attr){
+//           element[0].removeAttribute('ac-bind-model');
+//           element[0].removeAttribute('ac-parent');
+//           element[0].setAttribute('ng-model',attr.acParent+"."+scope.$eval(attr.acBindModel));
+//           console.log("ELEMENT[0]: "+element[0]);
+//           $compile(element[0])(scope);
+//         }
+//       };
+//     })
 
 .directive('acText', function() {
   return {
@@ -105,6 +133,11 @@ angular.module( 'ngBoilerplate.logEntry', [
 .directive('acNumber', function() {
   return {
     restrict: 'E',
+    scope: {
+      acName: '=',
+      acModel: '=',
+      acIncrement: '&'
+    },
     templateUrl: 'logEntry/LogDirectives/numberInput.tpl.html'
   };
 })

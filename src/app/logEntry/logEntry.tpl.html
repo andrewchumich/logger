@@ -3,34 +3,9 @@
         <div ng-repeat='page in logTemplate.pages'>
             <div ng-repeat='metric in page.metrics'>
                 {{logTemplate.metrics[metric].text}}:
-                <!-- 
-                    I feel like this could be done more elegantly
-                    but I am not sure what that would look like...
-                 -->
-                <div ng-switch on="logTemplate.metrics.{{ metric }}.type">
-                    <div ng-switch-when="text">
-                        <ac-text></ac-text>
-                    </div>
-                    <div ng-switch-when="textarea">
-                        <ac-textarea></ac-textarea>
-                    </div>
-                    <div ng-switch-when="date">
-                        <ac-date></ac-date>
-                    </div>
-                    <div ng-switch-when="number">
-                        <ac-number></ac-number>
-                    </div>
-                    <div ng-switch-when="time">
-                        <ac-time></ac-time>
-                    </div>
-                    <div ng-switch-when="enum">
-                        <ac-enum></ac-enum>
-                    </div>
-                    <div ng-switch-when="bool">
-                        <ac-bool></ac-bool>
-                    </div>
+                <div>
+                  <ac-dynamic-input ac-name="{{metric}}" ac-type="{{logTemplate.metrics[metric].type}}" ac-model="formData.metrics[metric]" ac-increment="incrementNumberInput()"></ac-dynamic-input>
                 </div>
-
             </div>
 
             <br>
@@ -40,4 +15,5 @@
 
         <input type="submit" id="submit" class="btn btn-default" value="Submit" />
     </form>
+    {{formData}}
 </div>

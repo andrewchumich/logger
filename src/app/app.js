@@ -47,7 +47,7 @@ angular.module( 'ngBoilerplate', [
   };
 
   $scope.attemptLogIn = function (data) {
-    
+
     $scope.auth.$login('password', {
     email: data.email,
     password: data.password,
@@ -81,8 +81,7 @@ angular.module( 'ngBoilerplate', [
     //I'm not sure if the auth object will always return quickly upon instantiation
     //there should be a way to wait for it?
     $scope.auth.$getCurrentUser().then(function (user) {
-      console.log('USER: '+ user);
-      if(user) {     
+      if(user) {
         $scope.userSetup(user);
       }
 
@@ -93,4 +92,3 @@ angular.module( 'ngBoilerplate', [
 })
 
 ;
-
