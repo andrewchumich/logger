@@ -31,7 +31,6 @@ angular.module( 'ngBoilerplate.logEntry', [
 
 
 .controller( 'LogEntryCtrl', function LogViewCtrl( $scope, $location, $firebase, $stateParams ) {
-  console.log("HERE");
   $scope.formData = {};
   $scope.formData.metrics = {};
   $scope.type = $stateParams.type;

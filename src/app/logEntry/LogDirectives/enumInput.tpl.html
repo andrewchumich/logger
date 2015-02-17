@@ -1,10 +1,11 @@
 <br>
-<div ng-show="value" ng-repeat='value in acTemplate.metrics[acName].values'>
+{{ acModel }}
+<br>
+<div class="btn-group">
 	<!--
 	$parent is required because ng-repeat will shadow the
 	acModel variable because it is a primitive. Read:
 	 https://github.com/angular/angular.js/wiki/Understanding-Scopes#ng-repeat
 	-->
-	<button type="button" ng-click="$parent.acModel = value" class="btn btn-primary btn-lg btn-block">{{ value }}</button>
-	<br>
+	<label class="btn btn-primary" ng-repeat='value in acTemplate.metrics[acName].values' ng-model="$parent.acModel" ng-show="value" btn-radio="value">{{value}}</label>
 </div>

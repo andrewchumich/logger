@@ -119,6 +119,7 @@ angular.module( 'ngBoilerplate.logView', [
     $scope.current.entry = entry;
   };
 
+  // sum distances of current week
   $scope.distanceAdder = function () {
     $scope.rangeDistance = 0;
     for (var i = 0; i < $scope.entriesArray.length; i++) {
