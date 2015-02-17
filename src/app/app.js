@@ -37,12 +37,15 @@ angular.module( 'ngBoilerplate', [
     $scope.firebase.users = {};
     $scope.firebase.users[user.uid.toString()] = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+user.uid.toString())).$asObject();
     $scope.firebase.users[user.uid.toString()].$loaded().then(function () {
-    $scope.type = $scope.firebase.users[user.uid].defaultLog;
-    $scope.log = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type)).$asObject();
-    $scope.entriesArray = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type+'/entries')).$asArray();
-    $scope.entries = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type+'/entries')).$asObject();
-    $scope.logTemplate = $firebase(new Firebase('https://runninglog.firebaseio.com/logs/'+$scope.type)).$asObject();
-    $scope.loaded = true;
+      $scope.type = $scope.firebase.users[user.uid].defaultLog;
+      $scope.log = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type)).$asObject();
+      $scope.entriesArray = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type+'/entries')).$asArray();
+      $scope.entries = $firebase(new Firebase('https://runninglog.firebaseio.com/users/'+$scope.auth.user.uid.toString()+'/userLogs/'+$scope.type+'/entries')).$asObject();
+      $scope.entries.$loaded().then(function() {
+        $scope.$broadcast("EntriesLoaded", $scope.entries);
+      });
+      $scope.logTemplate = $firebase(new Firebase('https://runninglog.firebaseio.com/logs/'+$scope.type)).$asObject();
+      $scope.loaded = true;
     });
   };
 

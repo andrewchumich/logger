@@ -21,11 +21,10 @@ angular.module( 'ngBoilerplate.logView', [
 
 
 
-//custom filter to return objects whose date attribute is within a certain range
+//custom filter to return objects whose date attributes are within a certain range
 .filter('dateFilter', function() {
   return function (entries, firstDay, days_ahead) {
       var dateList = [];
-      console.log(entries, firstDay, days_ahead);
       days_ahead = (typeof days_ahead === "undefined") ? 7 : days_ahead;
       if(entries != null && firstDay != null) {
         for(var i = 0; i < entries.length; i++){
@@ -33,7 +32,7 @@ angular.module( 'ngBoilerplate.logView', [
           var seven_days_ahead = today + (days_ahead)*24*60*60*1000;
           var date = [entries[i].metrics.date.substring(0,4),entries[i].metrics.date.substring(5,7),entries[i].metrics.date.substring(8,10)];
           var entry_date = new Date(date[0], date[1]-1, date[2]).getTime();
-          
+
           if (seven_days_ahead >= entry_date && today < entry_date) {
             dateList.push(entries[i]);
           }
@@ -85,15 +84,15 @@ angular.module( 'ngBoilerplate.logView', [
       case 0:
         return 'Sunday';
       case 1:
-        return 'Monday';        
+        return 'Monday';
       case 2:
-        return 'Tuesday';        
+        return 'Tuesday';
       case 3:
-        return 'Wednesday';        
+        return 'Wednesday';
       case 4:
-        return 'Thursday';         
+        return 'Thursday';
       case 5:
-        return 'Friday';  
+        return 'Friday';
       case 6:
         return 'Saturday';
       default:
@@ -124,7 +123,6 @@ angular.module( 'ngBoilerplate.logView', [
     $scope.rangeDistance = 0;
     for (var i = 0; i < $scope.entriesArray.length; i++) {
       if($scope.showDate($scope.entriesArray[i])) {
-        console.log("DISTANCE TO ADD : "+ $scope.entriesArray[i].metrics.distance);
         $scope.rangeDistance += $scope.entriesArray[i].metrics.distance;
       }
     }
@@ -144,11 +142,11 @@ angular.module( 'ngBoilerplate.logView', [
     var seven_days_ahead = today + (7)*24*60*60*1000;
     var date = [entry.metrics.date.substring(0,4),entry.metrics.date.substring(5,7),entry.metrics.date.substring(8,10)];
     var entry_date = new Date(date[0], date[1]-1, date[2]).getTime();
-    
+
     if (seven_days_ahead >= entry_date && today < entry_date) {
       return true;
     }
-        
+
     return false;
   };
 

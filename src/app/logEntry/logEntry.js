@@ -15,17 +15,35 @@ angular.module( 'ngBoilerplate.logEntry', [
       }
     },
     data:{ pageTitle: 'Log Entry' }
+  })
+  .state( 'logEntryEdit', {
+    url: '/logEntry/:type/:id',
+    views: {
+      "main": {
+        controller: 'LogEntryCtrl',
+        templateUrl: 'logEntry/logEntry.tpl.html'
+      }
+    },
+    data:{ pageTitle: 'Edit Log Entry' }
   });
 
 })
 
 
 .controller( 'LogEntryCtrl', function LogViewCtrl( $scope, $location, $firebase, $stateParams ) {
-  // This is simple a demo for UI Boostrap.
-  $scope.type = $stateParams.type;
-  $scope.currentPage = "2";
+  console.log("HERE");
   $scope.formData = {};
   $scope.formData.metrics = {};
+  $scope.type = $stateParams.type;
+  if($scope.id = $stateParams.id || undefined) {
+    if($scope.entries  === undefined || $scope.entries === null) {
+      $scope.$on("EntriesLoaded", function(event, entries) {
+        $scope.formData = entries[$scope.id];
+      });
+    } else {
+        $scope.formData = $scope.entries[$scope.id];
+    }
+  }
   //progress: is the form complete and has it been successfully added to firebase?
   $scope.progress = false;
   $scope.addFormData = function (data) {
@@ -66,14 +84,22 @@ angular.module( 'ngBoilerplate.logEntry', [
   };
 })
 
+/*
+acDynamicInput direcive allows custom input directives to
+have access to models based on the acName, acTemplate, and acModel variables
+acName: name of metric in logs.templateName.metrics table
+acTemplate: js object containing the current template being used
+  i.e. 'running' or 'fishing'
+acModel: js object containing the model the data should bind to
+  i.e. formData.metrics.timeOfDay
+*/
 .directive('acDynamicInput', function($log, $compile) {
     return {
         restrict: 'E',
         scope: {
             acName: '@',
             acTemplate: '=',
-            acModel: '=',
-            acIncrement: '&'
+            acModel: '='
         },
         link: function(scope, element, attrs) {
             // decode acType down into the proper sub-directive
