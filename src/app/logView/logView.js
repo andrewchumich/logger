@@ -32,7 +32,8 @@ angular.module( 'ngBoilerplate.logView', [
           var today = firstDay.getTime() - 24*60*60*1000;
           var seven_days_ahead = today + (days_ahead)*24*60*60*1000;
           // TODO add logic to account for old date style
-          var entry_date = entries[i].metrics.date;
+          var entry_date = new Date(entries[i].metrics.date);
+          entry_date = entry_date.getTime();
 
           if (seven_days_ahead >= entry_date && today < entry_date) {
             dateList.push(entries[i]);

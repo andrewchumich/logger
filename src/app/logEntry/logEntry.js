@@ -48,7 +48,9 @@ angular.module( 'ngBoilerplate.logEntry', [
   $scope.progress = false;
   $scope.addFormData = function (data) {
     if(data.metrics.date !== undefined  && data.metrics.date !== null) {
-      $scope.entries[data.metrics.date.getTime()+"-"+Date.now().toString()] = data;
+      data.metrics.date = new Date(data.metrics.date);
+      data.metrics.date = data.metrics.date.getTime();
+      $scope.entries[data.metrics.date+"-"+Date.now().toString()] = data;
       $scope.entries.$save().then(function (ref) {
         $scope.progress = true;
         $location.path('/logView/'+$scope.type);
@@ -122,6 +124,9 @@ acModel: js object containing the model the data should bind to
                     break;
                 case "enum":
                     template = "<ac-enum ac-name=\"acName\" ac-model=\"acModel\"></ac-enum>";
+                    break;
+                case "bool":
+                    template = "<ac-bool ac-name=\"acName\" ac-model=\"acModel\"></ac-bool>";
                     break;
                 default:
                     throw "acDynamicInput type not supported:" + scope.acType;
