@@ -72,7 +72,7 @@ angular.module( 'ngBoilerplate.logEntry', [
       }
       $scope.entries.$save().then(function (ref) {
         $scope.progress = true;
-        $location.path('/logView/'+$scope.type+'/'+$scope.redirect.date);
+        $location.path('/logView/'+$scope.type+'/'+($scope.redirect.date || ""));
       });
     }
     else {

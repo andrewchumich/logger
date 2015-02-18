@@ -81,6 +81,7 @@ angular.module( 'ngBoilerplate.logView', [
     $scope.usedIndexes = [];
     $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate() + number);
     $scope.distanceAdder();
+    $scope.current = {};
   };
   $scope.setDate = function(date) {
     $scope.rangeDistance = 0;
@@ -140,6 +141,14 @@ angular.module( 'ngBoilerplate.logView', [
         $scope.rangeDistance += $scope.entriesArray[i].metrics.distance;
       }
     }
+  };
+
+  $scope.deleteEntry = function (entry) {
+    $scope.entriesArray.$remove(entry).then(function(ref) {
+        console.log("NAME OF REMOVED ENTRY: "+ref.name());
+        $scope.deleteConfirm = false; // true
+        $scope.current = {}; // true
+    });
   };
 
   $scope.filterDates = function (dates, firstDay) {
