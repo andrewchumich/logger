@@ -78,6 +78,14 @@ angular.module( 'ngBoilerplate', [
     });
   };
 
+  $scope.makeDate = function (date) {
+    if (date === undefined || date === null || date === "") {
+      return new Date();
+    } else {
+      return new Date(date);
+    }
+  };
+
   $scope.firebase = {};
   $scope.firebase.logs = $firebase(new Firebase('https://runninglog.firebaseio.com/logs')).$asObject();
   $scope.firebase.logs.$loaded().then(function () {

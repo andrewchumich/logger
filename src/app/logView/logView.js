@@ -15,6 +15,16 @@ angular.module( 'ngBoilerplate.logView', [
       }
     },
     data:{ pageTitle: 'Log View' }
+  })
+  .state( 'logViewSet', {
+    url: '/logView/:type/:date',
+    views: {
+      "main": {
+        controller: 'LogViewCtrl',
+        templateUrl: 'logView/logView.tpl.html'
+      }
+    },
+    data:{ pageTitle: 'Log View' }
   });
 
 })
@@ -50,7 +60,8 @@ angular.module( 'ngBoilerplate.logView', [
   $scope.current = {};
   $scope.rangeDistance = 0;
   $scope.deleteConfirm = false;
-  $scope.beginningOfWeek = new Date();
+  $scope.beginningOfWeek = $scope.makeDate(Number($stateParams.date));
+
   /*
     weeks start on Mondays (this will be variable eventually), so the default page, if it is
     currently a Sunday, should be the previous Monday

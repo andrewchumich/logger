@@ -25,6 +25,16 @@ angular.module( 'ngBoilerplate.logEntry', [
       }
     },
     data:{ pageTitle: 'Edit Log Entry' }
+  })
+  .state( 'logEntryEditDate', {
+    url: '/logEntry/:type/:id/:date',
+    views: {
+      "main": {
+        controller: 'LogEntryCtrl',
+        templateUrl: 'logEntry/logEntry.tpl.html'
+      }
+    },
+    data:{ pageTitle: 'Edit Log Entry' }
   });
 
 })
@@ -34,13 +44,18 @@ angular.module( 'ngBoilerplate.logEntry', [
   $scope.formData = {};
   $scope.formData.metrics = {};
   $scope.type = $stateParams.type;
-  if($scope.id = $stateParams.id || undefined) {
+  $scope.redirect = {};
+  $scope.redirect.date = $stateParams.date;
+  $scope.id = $stateParams.id || undefined;
+  if($scope.id) {
     if($scope.entries  === undefined || $scope.entries === null) {
       $scope.$on("EntriesLoaded", function(event, entries) {
         $scope.formData = entries[$scope.id];
+        $scope.redirect.date = $scope.makeDate(entries[$scope.id].metrics.date).getTime();
       });
     } else {
         $scope.formData = $scope.entries[$scope.id];
+        $scope.redirect.date = $scope.makeDate($scope.entries[$scope.id].metrics.date).getTime();
     }
   }
 

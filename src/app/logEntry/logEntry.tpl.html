@@ -12,7 +12,9 @@
             <br>
         </div>
         <p ng-show="error" class="text-danger">{{ error }}</p>
-        {{ formData }}
-        <input type="submit" id="submit" class="btn btn-default" value="Submit" />
+        <input type="submit" id="submit" class="btn btn-primary" value="Submit" />
+        <a ng-href="#/logView/{{type}}/{{redirect.date}}" ng-show="id" class="btn btn-default">
+            Cancel
+        </a>
     </form>
 </div>
