@@ -1,6 +1,7 @@
 <div class='container'>
     <form ng-submit='addFormData(formData)'>
         <div ng-repeat='page in logTemplate.pages'>
+            <br>
             <div ng-repeat='metric in page.metrics'>
                 {{logTemplate.metrics[metric].text}}:
                 <div>

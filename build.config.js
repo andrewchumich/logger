@@ -59,6 +59,12 @@ module.exports = {
    * The `vendor_files.assets` property holds any assets to be copied along
    * with our app's assets. This structure is flattened, so it is not
    * recommended that you use wildcards.
+
+   ALC - added glyphs to assets to make ui-bootstrap directives work
+   it is probably bad practice to utilize two nearly identical icon 
+   libraries (FA and glyphicons), but it seemed better to include
+   a few more files than to alter a ui-bootstrap directive to use
+   different icons; however I could certainly be wrong
    */
   vendor_files: {
     js: [
