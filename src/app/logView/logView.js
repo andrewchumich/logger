@@ -26,12 +26,13 @@ angular.module( 'ngBoilerplate.logView', [
   return function (entries, firstDay, days_ahead) {
       var dateList = [];
       days_ahead = (typeof days_ahead === "undefined") ? 7 : days_ahead;
-      if(entries != null && firstDay != null) {
+      if(entries !== null && entries !== undefined && firstDay !== null && firstDay !== undefined) {
         for(var i = 0; i < entries.length; i++){
+
           var today = firstDay.getTime() - 24*60*60*1000;
           var seven_days_ahead = today + (days_ahead)*24*60*60*1000;
-          var date = [entries[i].metrics.date.substring(0,4),entries[i].metrics.date.substring(5,7),entries[i].metrics.date.substring(8,10)];
-          var entry_date = new Date(date[0], date[1]-1, date[2]).getTime();
+          // TODO add logic to account for old date style
+          var entry_date = entries[i].metrics.date;
 
           if (seven_days_ahead >= entry_date && today < entry_date) {
             dateList.push(entries[i]);
@@ -47,7 +48,7 @@ angular.module( 'ngBoilerplate.logView', [
   $scope.type = $stateParams.type;
   $scope.current = {};
   $scope.rangeDistance = 0;
-
+  $scope.deleteConfirm = false;
   $scope.beginningOfWeek = new Date();
   /*
     weeks start on Mondays (this will be variable eventually), so the default page, if it is
@@ -130,6 +131,7 @@ angular.module( 'ngBoilerplate.logView', [
   };
 
   $scope.filterDates = function (dates, firstDay) {
+
     $scope.filteredDates = dateFilterFilter(dates, firstDay);
     $scope.rangeDistance = 0;
     for(var i = 0; i < $scope.filteredDates.length; i++){
@@ -141,10 +143,9 @@ angular.module( 'ngBoilerplate.logView', [
   $scope.showDate = function (entry) {
     var today = $scope.beginningOfWeek.getTime() - 24*60*60*1000;
     var seven_days_ahead = today + (7)*24*60*60*1000;
-    var date = [entry.metrics.date.substring(0,4),entry.metrics.date.substring(5,7),entry.metrics.date.substring(8,10)];
-    var entry_date = new Date(date[0], date[1]-1, date[2]).getTime();
-
+    var entry_date = entry.metrics.date;
     if (seven_days_ahead >= entry_date && today < entry_date) {
+      console.log(today, entry_date, seven_days_ahead);
       return true;
     }
 

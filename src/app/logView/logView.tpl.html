@@ -46,7 +46,12 @@
             <a ng-href="#/logEntry/{{type}}/{{ current.entry.$id }}" class="btn btn-warning">
                 Edit
             </a>
-            <button type="button" class="btn btn-danger" ng-click="deleteEntry(current.entry)">Delete</button>
+            <button class="btn btn-danger" ng-show="!deleteConfirm" ng-click="deleteConfirm = true" type="button">Delete</button>
+            <div ng-show="deleteConfirm">
+              <h3>Are you sure? (this can't be undone)</h3>
+              <button class="btn btn-danger" ng-click="deleteEntry(current.entry)" type="button">Yes, delete entry</button>
+              <button class="btn btn-info" ng-click="deleteConfirm = false" type="button">No</button>
+            </div>
             <br>
         </div>
         <div>

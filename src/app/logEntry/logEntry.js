@@ -48,7 +48,7 @@ angular.module( 'ngBoilerplate.logEntry', [
   $scope.progress = false;
   $scope.addFormData = function (data) {
     if(data.metrics.date !== undefined  && data.metrics.date !== null) {
-      $scope.entries[data.metrics.date+"-"+Date.now().toString()] = data;
+      $scope.entries[data.metrics.date.getTime()+"-"+Date.now().toString()] = data;
       $scope.entries.$save().then(function (ref) {
         $scope.progress = true;
         $location.path('/logView/'+$scope.type);
@@ -75,7 +75,7 @@ angular.module( 'ngBoilerplate.logEntry', [
     if($scope.formData.metrics[name] + difference < 0){
       return;
     }
-    if($scope.formData.metrics[name] == null || $scope.formData.metrics[name] === undefined) {
+    if($scope.formData.metrics[name] === null || $scope.formData.metrics[name] === undefined) {
       $scope.formData.metrics[name] = Number(difference);
     }
     else {
