@@ -60,7 +60,7 @@ angular.module( 'ngBoilerplate.logView', [
   $scope.current = {};
   $scope.rangeDistance = 0;
   $scope.deleteConfirm = false;
-  $scope.beginningOfWeek = $scope.makeDate(Number($stateParams.date));
+  $scope.beginningOfWeek = $scope.makeDate($stateParams.date);
 
   /*
     weeks start on Mondays (this will be variable eventually), so the default page, if it is

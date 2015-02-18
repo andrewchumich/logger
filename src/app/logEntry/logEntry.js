@@ -65,10 +65,14 @@ angular.module( 'ngBoilerplate.logEntry', [
     if(data.metrics.date !== undefined  && data.metrics.date !== null) {
       data.metrics.date = new Date(data.metrics.date);
       data.metrics.date = data.metrics.date.getTime();
-      $scope.entries[data.metrics.date+"-"+Date.now().toString()] = data;
+      if ($scope.redirect.date) {
+        $scope.entries[$scope.id] = data;
+      } else {
+        $scope.entries[data.metrics.date+"-"+Date.now().toString()] = data;
+      }
       $scope.entries.$save().then(function (ref) {
         $scope.progress = true;
-        $location.path('/logView/'+$scope.type);
+        $location.path('/logView/'+$scope.type+'/'+$scope.redirect.date);
       });
     }
     else {

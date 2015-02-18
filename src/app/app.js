@@ -79,10 +79,14 @@ angular.module( 'ngBoilerplate', [
   };
 
   $scope.makeDate = function (date) {
-    if (date === undefined || date === null || date === "") {
+    if (date === undefined || date === null || date === "" || date === 0 ) {
       return new Date();
     } else {
-      return new Date(date);
+      if (isNaN(Number(date))) {
+        return new Date(date);
+      } else {
+        return new Date(Number(date));
+      }
     }
   };
 
