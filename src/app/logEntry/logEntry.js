@@ -55,7 +55,7 @@ angular.module( 'ngBoilerplate.logEntry', [
       });
     } else {
         $scope.formData = $scope.entries[$scope.id];
-        $scope.redirect.date = $scope.makeDate($scope.entries[$scope.id].metrics.date).getTime();
+        $scope.redirect.date = $scope.makeDate(pa.metrics.date).getTime();
     }
   }
 
@@ -79,30 +79,7 @@ angular.module( 'ngBoilerplate.logEntry', [
       $scope.error = "You must enter a date!";
     }
   };
-  $scope.setEnumValue = function (metric, value) {
-    $scope.formData.metrics[metric] = value;
-  };
-  $scope.setDateValue = function (metric, value) {
-    var date = new Date();
-    if(value === 'YESTERDAY'){
-      date.setDate(date.getDate() - 1);
-    }
 
-    $scope.formData.metrics[metric] = date.getFullYear()+"-"+('0' + (date.getMonth()+1)).slice(-2)+"-"+('0' + date.getDate()).slice(-2);
-  };
-
-  $scope.incrementNumberInput = function (name, difference) {
-    console.log(name);
-    if($scope.formData.metrics[name] + difference < 0){
-      return;
-    }
-    if($scope.formData.metrics[name] === null || $scope.formData.metrics[name] === undefined) {
-      $scope.formData.metrics[name] = Number(difference);
-    }
-    else {
-      $scope.formData.metrics[name] += Number(difference);
-    }
-  };
 })
 
 /*
@@ -124,6 +101,7 @@ acModel: js object containing the model the data should bind to
         },
         link: function(scope, element, attrs) {
             // decode acType down into the proper sub-directive
+            console.log($log);
             var template = null;
             switch (scope.acTemplate.metrics[scope.acName].type) {
                 case "text":

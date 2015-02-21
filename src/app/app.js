@@ -50,7 +50,7 @@ angular.module( 'ngBoilerplate', [
   };
 
   $scope.attemptLogIn = function (data) {
-
+    console.log($scope.auth.$login().then());
     $scope.auth.$login('password', {
     email: data.email,
     password: data.password,
@@ -59,7 +59,7 @@ angular.module( 'ngBoilerplate', [
       $scope.error = "";
       $scope.userSetup(user);
       $location.path('/logHome/'+$scope.type);
-       console.log("Logged in as: ", user.uid);
+      console.log("Logged in as: ", user.uid);
 
     }, function(error) {
        console.error("Login failed: ", error);
@@ -68,7 +68,9 @@ angular.module( 'ngBoilerplate', [
   };
 
   $scope.logOut = function () {
-    $scope.auth.$logout();
+    $scope.auth.$logout().then(function(a) {
+      console.log("LOG OUT DATA: " + a);
+    });
     $scope.loaded = false;
   };
 
@@ -88,12 +90,12 @@ angular.module( 'ngBoilerplate', [
   $scope.firebase = {};
   $scope.firebase.logs = $firebase(new Firebase('https://runninglog.firebaseio.com/logs')).$asObject();
   $scope.firebase.logs.$loaded().then(function () {
-    //I'm not sure if the auth object will always return quickly upon instantiation
-    //there should be a way to wait for it?
-    $scope.auth.$getCurrentUser().then(function (user) {
-      if(user) {
-        $scope.userSetup(user);
-      }
+  //I'm not sure if the auth object will always return quickly upon instantiation
+  //there should be a way to wait for it?
+  $scope.auth.$getCurrentUser().then(function (user) {
+    if(user) {
+      $scope.userSetup(user);
+    }
 
 
     });

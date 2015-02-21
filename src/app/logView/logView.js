@@ -33,19 +33,19 @@ angular.module( 'ngBoilerplate.logView', [
 
 //custom filter to return objects whose date attributes are within a certain range
 .filter('dateFilter', function() {
-  return function (entries, firstDay, days_ahead) {
+  return function (entries, firstDay, daysAhead) {
       var dateList = [];
-      days_ahead = (typeof days_ahead === "undefined") ? 7 : days_ahead;
+      daysAhead = (typeof daysAhead === "undefined") ? 7 : daysAhead;
       if(entries !== null && entries !== undefined && firstDay !== null && firstDay !== undefined) {
         for(var i = 0; i < entries.length; i++){
 
           var today = firstDay.getTime() - 24*60*60*1000;
-          var seven_days_ahead = today + (days_ahead)*24*60*60*1000;
+          daysAhead = today + (daysAhead)*24*60*60*1000;
           // TODO add logic to account for old date style
           var entry_date = new Date(entries[i].metrics.date);
           entry_date = entry_date.getTime();
 
-          if (seven_days_ahead >= entry_date && today < entry_date) {
+          if (seven_daysAhead >= entry_date && today < entry_date) {
             dateList.push(entries[i]);
           }
         }
@@ -59,6 +59,7 @@ angular.module( 'ngBoilerplate.logView', [
   $scope.type = $stateParams.type;
   $scope.current = {};
   $scope.rangeDistance = 0;
+  $scope.daysAhead = 7;
   $scope.deleteConfirm = false;
   $scope.beginningOfWeek = $scope.makeDate($stateParams.date);
 
@@ -74,21 +75,21 @@ angular.module( 'ngBoilerplate.logView', [
   }
 
   //Define Functions
+  //Change current day by a number of days
   $scope.changeDay = function(number) {
     //reset range distance whenever range is changed
     //not a great solution, but it works
     $scope.rangeDistance = 0;
-    $scope.usedIndexes = [];
     $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate() + number);
     $scope.distanceAdder();
     $scope.current = {};
   };
+
+  // set current date to given date
   $scope.setDate = function(date) {
     $scope.rangeDistance = 0;
-    $scope.usedIndexes = [];
-    console.log(date);
     if (date != null){
-      $scope.beginningOfWeek = new Date(date);
+      $scope.beginningOfWeek = $scope.makeDate(date);
       $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate());
     }
     $scope.distanceAdder();
@@ -137,7 +138,7 @@ angular.module( 'ngBoilerplate.logView', [
   $scope.distanceAdder = function () {
     $scope.rangeDistance = 0;
     for (var i = 0; i < $scope.entriesArray.length; i++) {
-      if($scope.showDate($scope.entriesArray[i])) {
+      if($scope.showDate($scope.entriesArray[i].metrics.date)) {
         $scope.rangeDistance += $scope.entriesArray[i].metrics.distance;
       }
     }
@@ -161,12 +162,11 @@ angular.module( 'ngBoilerplate.logView', [
     return $scope.filteredDates;
   };
 
-  $scope.showDate = function (entry) {
+  $scope.showDate = function (date) {
     var today = $scope.beginningOfWeek.getTime() - 24*60*60*1000;
-    var seven_days_ahead = today + (7)*24*60*60*1000;
-    var entry_date = entry.metrics.date;
-    if (seven_days_ahead >= entry_date && today < entry_date) {
-      console.log(today, entry_date, seven_days_ahead);
+    var futureDate = today + ($scope.daysAhead)*24*60*60*1000;
+    var entryDate = date.getTime();
+    if (futureDate >= entryDate && today < entryDate) {
       return true;
     }
 

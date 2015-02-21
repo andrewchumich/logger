@@ -291,24 +291,24 @@
 			"file": "src/app/logView/logView.js",
 			"settings":
 			{
-				"buffer_size": 4206,
-				"line_ending": "Windows"
+				"buffer_size": 4918,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "src/app/logView/logView.tpl.html",
 			"settings":
 			{
-				"buffer_size": 2265,
-				"line_ending": "Windows"
+				"buffer_size": 2694,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "src/app/app.js",
 			"settings":
 			{
-				"buffer_size": 3040,
-				"line_ending": "Windows"
+				"buffer_size": 3372,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -343,7 +343,12 @@
 	},
 	"console":
 	{
-		"height": 244.0
+		"height": 244.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			" import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
 	},
 	"distraction_free":
 	{
@@ -354,6 +359,9 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+	],
 	"file_history":
 	[
 		"/C/Users/Andrew/Documents/Scorebook/scorebook/src/app/app.js",
@@ -715,17 +723,18 @@
 				{
 					"buffer": 0,
 					"file": "src/app/logView/logView.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4206,
+						"buffer_size": 4918,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3720,
-								3720
+								0,
+								0
 							]
 						],
 						"settings":
@@ -738,22 +747,24 @@
 						"translation.y": 3490.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
 					"file": "src/app/logView/logView.tpl.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2265,
+						"buffer_size": 2694,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								487,
-								487
+								0,
+								0
 							]
 						],
 						"settings":
@@ -766,22 +777,24 @@
 						"translation.y": 1142.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
 					"file": "src/app/app.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3040,
+						"buffer_size": 3372,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2001,
-								2001
+								0,
+								0
 							]
 						],
 						"settings":
@@ -791,14 +804,16 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1336.0,
+						"translation.y": 929.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
 					"file": "src/index.html",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 7104,
@@ -822,6 +837,7 @@
 						"translation.y": 3322.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -858,6 +874,11 @@
 		]
 	},
 	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "scorebook.sublime-project",
 	"replace":
 	{
 		"height": 92.0
@@ -891,10 +912,25 @@
 		],
 		"width": 0.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 292.0,
-	"status_bar_visible": true
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }
