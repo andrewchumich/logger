@@ -40,12 +40,11 @@ angular.module( 'ngBoilerplate.logView', [
         for(var i = 0; i < entries.length; i++){
 
           var today = firstDay.getTime() - 24*60*60*1000;
-          daysAhead = today + (daysAhead)*24*60*60*1000;
+          var msAhead = today + (daysAhead)*24*60*60*1000;
           // TODO add logic to account for old date style
           var entry_date = new Date(entries[i].metrics.date);
           entry_date = entry_date.getTime();
-
-          if (seven_daysAhead >= entry_date && today < entry_date) {
+          if (msAhead >= entry_date && today < entry_date) {
             dateList.push(entries[i]);
           }
         }
@@ -62,6 +61,9 @@ angular.module( 'ngBoilerplate.logView', [
   $scope.daysAhead = 7;
   $scope.deleteConfirm = false;
   $scope.beginningOfWeek = $scope.makeDate($stateParams.date);
+  $scope.$on('EntriesLoaded', function() {
+    $scope.distanceAdder();
+  });
 
   /*
     weeks start on Mondays (this will be variable eventually), so the default page, if it is
@@ -80,6 +82,7 @@ angular.module( 'ngBoilerplate.logView', [
     //reset range distance whenever range is changed
     //not a great solution, but it works
     $scope.rangeDistance = 0;
+    $scope.usedIndexes = [];
     $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate() + number);
     $scope.distanceAdder();
     $scope.current = {};
@@ -138,7 +141,7 @@ angular.module( 'ngBoilerplate.logView', [
   $scope.distanceAdder = function () {
     $scope.rangeDistance = 0;
     for (var i = 0; i < $scope.entriesArray.length; i++) {
-      if($scope.showDate($scope.entriesArray[i].metrics.date)) {
+      if($scope.showDate($scope.makeDate($scope.entriesArray[i].metrics.date))) {
         $scope.rangeDistance += $scope.entriesArray[i].metrics.distance;
       }
     }
@@ -154,7 +157,7 @@ angular.module( 'ngBoilerplate.logView', [
 
   $scope.filterDates = function (dates, firstDay) {
 
-    $scope.filteredDates = dateFilterFilter(dates, firstDay);
+    $scope.filteredDates = dateFilterFilter(dates, firstDay, $scope.daysAhead);
     $scope.rangeDistance = 0;
     for(var i = 0; i < $scope.filteredDates.length; i++){
       $scope.rangeDistance += $scope.filteredDates[i].metrics.distance;

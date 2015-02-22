@@ -43,6 +43,7 @@ angular.module( 'ngBoilerplate.logEntry', [
 .controller( 'LogEntryCtrl', function LogViewCtrl( $scope, $location, $firebase, $stateParams ) {
   $scope.formData = {};
   $scope.formData.metrics = {};
+  $scope.maxDate = new Date();
   $scope.type = $stateParams.type;
   $scope.redirect = {};
   $scope.redirect.date = $stateParams.date;
@@ -55,8 +56,10 @@ angular.module( 'ngBoilerplate.logEntry', [
       });
     } else {
         $scope.formData = $scope.entries[$scope.id];
-        $scope.redirect.date = $scope.makeDate(pa.metrics.date).getTime();
+        $scope.redirect.date = $scope.makeDate($scope.formData.metrics.date).getTime();
     }
+  } else {
+    $scope.formData.metrics.date = new Date();
   }
 
   //progress: is the form complete and has it been successfully added to firebase?
@@ -101,7 +104,6 @@ acModel: js object containing the model the data should bind to
         },
         link: function(scope, element, attrs) {
             // decode acType down into the proper sub-directive
-            console.log($log);
             var template = null;
             switch (scope.acTemplate.metrics[scope.acName].type) {
                 case "text":

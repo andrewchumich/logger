@@ -111,6 +111,25 @@ h2 {
   }
 }
 
+.log-view-repeat.ng-move,
+.log-view-repeat.ng-enter,
+.log-view-repeat.ng-leave {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.log-view-repeat.ng-leave.ng-leave-active,
+.log-view-repeat.ng-move,
+.log-view-repeat.ng-enter {
+  opacity:0;
+}
+
+.log-view-repeat.ng-leave,
+.log-view-repeat.ng-move.ng-move-active,
+.log-view-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
 
 /**
  * Now that all app-wide styles have been applied, we can load the styles for

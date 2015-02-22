@@ -10,7 +10,8 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.logIn',
   'ngBoilerplate.logRegister',
   'firebase',
-  'ui.router'
+  'ui.router',
+  'ngAnimate'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
