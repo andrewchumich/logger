@@ -53,17 +53,20 @@ angular.module( 'ngBoilerplate.logView', [
   };
 })
 
-.controller( 'LogViewCtrl', function LogViewCtrl( $scope, $firebase, $stateParams, dateFilterFilter ) {
+
+.controller( 'LogViewCtrl', function LogViewCtrl( $scope, $window, $firebase, $stateParams, dateFilterFilter ) {
   //Initialize variables
   $scope.type = $stateParams.type;
   $scope.current = {};
   $scope.rangeDistance = 0;
   $scope.daysAhead = 7;
   $scope.deleteConfirm = false;
+  $scope.filteredDates = [];
   $scope.beginningOfWeek = $scope.makeDate($stateParams.date);
   $scope.$on('EntriesLoaded', function() {
-    $scope.distanceAdder();
+    $scope.filteredDates = $scope.filterDates($scope.entriesArray, $scope.beginningOfWeek);
   });
+
 
   /*
     weeks start on Mondays (this will be variable eventually), so the default page, if it is
@@ -76,6 +79,7 @@ angular.module( 'ngBoilerplate.logView', [
     $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate() - 6);
   }
 
+
   //Define Functions
   //Change current day by a number of days
   $scope.changeDay = function(number) {
@@ -84,7 +88,7 @@ angular.module( 'ngBoilerplate.logView', [
     $scope.rangeDistance = 0;
     $scope.usedIndexes = [];
     $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate() + number);
-    $scope.distanceAdder();
+    $scope.filteredDates = $scope.filterDates($scope.entriesArray, $scope.beginningOfWeek);
     $scope.current = {};
   };
 
@@ -95,7 +99,7 @@ angular.module( 'ngBoilerplate.logView', [
       $scope.beginningOfWeek = $scope.makeDate(date);
       $scope.beginningOfWeek.setDate($scope.beginningOfWeek.getDate());
     }
-    $scope.distanceAdder();
+    $scope.filteredDates = $scope.filterDates($scope.entriesArray, $scope.beginningOfWeek);
   };
   $scope.getDayOfWeek = function() {
     switch($scope.beginningOfWeek.getDay()) {
@@ -137,15 +141,6 @@ angular.module( 'ngBoilerplate.logView', [
     $scope.current.entry = entry;
   };
 
-  // sum distances of current week
-  $scope.distanceAdder = function () {
-    $scope.rangeDistance = 0;
-    for (var i = 0; i < $scope.entriesArray.length; i++) {
-      if($scope.showDate($scope.makeDate($scope.entriesArray[i].metrics.date))) {
-        $scope.rangeDistance += $scope.entriesArray[i].metrics.distance;
-      }
-    }
-  };
 
   $scope.deleteEntry = function (entry) {
     $scope.entriesArray.$remove(entry).then(function(ref) {
@@ -165,6 +160,8 @@ angular.module( 'ngBoilerplate.logView', [
     return $scope.filteredDates;
   };
 
+
+
   $scope.showDate = function (date) {
     var today = $scope.beginningOfWeek.getTime() - 24*60*60*1000;
     var futureDate = today + ($scope.daysAhead)*24*60*60*1000;
@@ -175,6 +172,8 @@ angular.module( 'ngBoilerplate.logView', [
 
     return false;
   };
+
+  $scope.filteredDates = $scope.filterDates($scope.entriesArray, $scope.beginningOfWeek);
 
 
 })

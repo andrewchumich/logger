@@ -12,6 +12,8 @@
 
         </div>
 
+        <div d3-bars bar-height="20" bar-padding="5" ac-data="filteredDates" ac-metric="distance"></div>
+
         <table id="rangeTable" class='table table-hover'>
             <tr>
                 <th><a href="">Date</th>
@@ -20,7 +22,7 @@
                 <th><a href="">Time of Day</a>
                 </th>
             </tr>
-            <tr class="log-view-repeat" ng-repeat="entry in entriesArray | dateFilter : beginningOfWeek : daysAhead" ng-class='runTypeTableClass(entry.metrics.runType)' ng-click="setCurrent(entry)">
+            <tr class="log-view-repeat" ng-repeat="entry in filteredDates" ng-class='runTypeTableClass(entry.metrics.runType)' ng-click="setCurrent(entry)">
                 <td>
                     {{entry.metrics.date | date : 'mediumDate'}}
                 </td>

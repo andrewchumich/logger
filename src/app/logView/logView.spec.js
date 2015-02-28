@@ -7,7 +7,6 @@ describe( 'logView section', function() {
         $scope = $rootScope.$new();
         AppCtrl = $controller( 'AppCtrl', { $location: $location, $scope: $scope });
         LogViewCtrl = $controller( 'LogViewCtrl', { $location: $location, $scope: $scope });
-        spyOn( $scope, 'distanceAdder' );
     }));
 
     it( 'initial day of week should be monday', inject( function() {
@@ -32,11 +31,9 @@ describe( 'logView section', function() {
     it( 'change day function should increase or decrease beginningOfWeek', inject(function() {
         var oldDate = $scope.beginningOfWeek.getTime();
         $scope.changeDay(7);
-        expect( $scope.distanceAdder ).toHaveBeenCalled();
         expect ($scope.beginningOfWeek.getTime() ).toBeGreaterThan(oldDate);
         oldDate = $scope.beginningOfWeek.getTime();
         $scope.changeDay(-4);
-        expect( $scope.distanceAdder ).toHaveBeenCalled();
         expect ($scope.beginningOfWeek.getTime() ).toBeLessThan(oldDate);
 
     }));
@@ -44,7 +41,6 @@ describe( 'logView section', function() {
     it( 'setDate should set beginningOfWeek', inject( function() {
         var newDate = new Date(0);
         $scope.setDate(newDate);
-        expect( $scope.distanceAdder ).toHaveBeenCalled();
         
         expect( $scope.beginningOfWeek.getTime() ).toBe(newDate.getTime());
 
