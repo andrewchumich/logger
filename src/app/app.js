@@ -23,12 +23,15 @@ angular.module('ngBoilerplate', [
 
 
 
-.controller('AppCtrl', function AppCtrl($scope, $window, $location, $firebase, $firebaseSimpleLogin) {
+.controller('AppCtrl', function AppCtrl($scope, $window, $location, $state, $firebase, $firebaseSimpleLogin) {
+        
         $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
             if (angular.isDefined(toState.data.pageTitle)) {
                 $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate';
             }
         });
+
+
 
 
         $scope.loaded = false;
@@ -114,11 +117,12 @@ angular.module('ngBoilerplate', [
             },
             link: function(scope, element, attrs) {
                 d3Service.d3().then(function(d3) {
-                    var margin = parseInt(attrs.margin, 10) || 20,
-                        barHeight = parseInt(attrs.barHeight, 10) || 20,
+                    var margin = parseInt(attrs.margin, 10) || 40,
+                        barWidth = parseInt(attrs.barWidth, 10) || 20,
                         barPadding = parseInt(attrs.barPadding, 10) || 5;
                     var svg = d3.select(element[0])
                         .append('svg')
+                        .attr({ 'class': 'bar-chart'})
                         .style('width', '100%');
 
                     // Browser onresize event
@@ -148,37 +152,63 @@ angular.module('ngBoilerplate', [
                         // setup variables
                         var width = d3.select(element[0]).node().offsetWidth - margin,
                             // calculate the height
-                            height = scope.data.length * (barHeight + barPadding),
+                            height = d3.select(element[0]).node().offsetHeight - margin,
                             // Use the category20() scale function for multicolor support
                             color = d3.scale.category20(),
                             // our xScale
-                            xScale = d3.scale.linear()
+                            yScale = d3.scale.linear()
                             .domain([0, d3.max(data, function(d) {
                                 return d.metrics[metric];
                             })])
-                            .range([0, width]);
+                            .range([height, 0]),
+                            barWidth = 20;
 
-                        // set the height based on the calculations above
-                        svg.attr('height', height);
+                        var x = d3.scale.ordinal()
+                            .rangeRoundBands([0, width], 0.1);
 
-                        //create the rectangles for the bar chart
-                        svg.selectAll('rect')
-                            .data(data).enter()
-                            .append('rect')
-                            .attr('height', barHeight)
-                            .attr('width', 140)
-                            .attr('x', Math.round(margin / 2))
-                            .attr('y', function(d, i) {
-                                return i * (barHeight + barPadding);
-                            })
-                            .attr('fill', function(d) {
-                                return color(d.metrics[metric]);
-                            })
-                            .transition()
-                            .duration(1000)
-                            .attr('width', function(d) {
-                                return xScale(d.metrics[metric]);
-                            });
+                        var y = d3.scale.linear()
+                            .range([height, 0]);
+
+                        var xAxis = d3.svg.axis()
+                            .scale(x)
+                            .orient("bottom");
+
+                        var yAxis = d3.svg.axis()
+                            .scale(y)
+                            .orient("left")
+                            .ticks(10, "%");
+
+                        y.domain([0, d3.max(data, function(d) { return d.metrics[metric]; })]);
+                        x.domain(data.map(function(d) { return d.metrics[metric]; }));
+
+                        var chart = d3.select(".bar-chart")
+                            .attr("width", width);
+
+                        chart.append("g")
+                          .attr("class", "x axis")
+                          .attr("transform", "translate(0," + height + ")")
+                          .call(xAxis);
+
+                        chart.append("g")
+                          .attr("class", "y axis")
+                          .call(yAxis)
+                        .append("text")
+                          .attr("transform", "rotate(-90)")
+                          .attr("y", 6)
+                          .attr("dy", ".71em")
+                          .style("text-anchor", "end")
+                          .text(metric);
+
+
+                      chart.selectAll(".bar")
+                          .data(data)
+                        .enter().append("rect")
+                          .attr("class", "bar")
+                          .attr("x", function(d) { return x(d.metrics[metric]); })
+                          .attr("width", x.rangeBand())
+                          .attr("y", function(d) { return y(d.metrics[metric]); })
+                          .attr("height", function(d) { return height - y(d.metrics[metric]); })
+                          .attr("fill", function(d) { return color(d.metrics["runType"]); });
                     };
                 });
             }
